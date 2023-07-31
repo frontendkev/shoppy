@@ -1,0 +1,36 @@
+
+
+
+
+.med-tab::before {
+    box-shadow: 0.2em 0em 0.5em rgb(0, 0, 0, 0.4);
+}
+
+.med-tab-image, .med-tab-image-reverse {
+    transition: all 0.5s ease;
+}
+
+.med-tab-image-reverse {
+    opacity: 1;
+    transform: translateX(-3.3em);
+}
+
+.med-tab:hover .med-tab-image {
+    transform: translateX(0.3em);
+    transition: all 0.5s ease;
+}
+.med-tab:hover .med-tab-image-reverse {
+    transform: translateX(-4.2em);
+    transition: all 0.5s ease;
+}
+.med-tab img {
+    filter: drop-shadow(0.3em 0em 0.3em rgb(0, 0, 0, 0.3));
+}
+
+
+.tab-two:hover::before {
+    transition: all 1000s ease-in-out;
+    background-color: black;
+}
+
+

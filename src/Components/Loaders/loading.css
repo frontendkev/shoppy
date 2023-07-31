@@ -1,0 +1,15 @@
+
+
+.loader {
+    animation: scale 0.7s linear infinite backwards alternate-reverse;
+    animation-delay: var(--i);
+}
+
+@keyframes scale {
+    0%{
+        transform: scaleY(0)
+    }
+    100%{
+        transform: scaleY(1);
+    }
+}

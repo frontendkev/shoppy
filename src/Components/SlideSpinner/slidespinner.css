@@ -1,0 +1,60 @@
+
+:root {
+    --transform: 3em;
+}
+
+.spinner::before {
+    content: '';
+    position: absolute;
+    left: -1em;
+    z-index: 40;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(238, 126, 1, 1);
+    animation: slide-spinner 5s ease-in forwards;
+}
+
+@keyframes slide-spinner {
+    0% {
+        transform: translateX(0em);
+    }
+    100% {
+        transform: translateX(var(--transform));
+    }
+}
+
+@-moz-keyframes slide-spinner {
+    0% {
+        transform: translateX(0em);
+    }
+    100% {
+        transform: translateX(var(--transform));
+    }
+}
+
+@-ms-keyframes slide-spinner {
+    0% {
+        transform: translateX(0em);
+    }
+    100% {
+        transform: translateX(var(--transform));
+    }
+}
+
+@-webkit-keyframes slide-spinner {
+    0% {
+        transform: translateX(0em);
+    }
+    100% {
+        transform: translateX(var(--transform));
+    }
+}
+
+@-o-keyframes slide-spinner {
+    0% {
+        transform: translateX(0em);
+    }
+    100% {
+        transform: translateX(var(--transform));
+    }
+}

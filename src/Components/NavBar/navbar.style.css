@@ -1,0 +1,12 @@
+@media only screen and (min-width:360px){
+  
+  }
+#nav-title {
+    font-family: avigea;
+    color: rgb(0, 0, 0, 0.8);
+    letter-spacing: 0.1em;
+}
+
+.top-menu {
+    box-shadow: inset 0px 0.3px 0.3px 0.3px rgb(0, 0, 0, 0.3);
+}
