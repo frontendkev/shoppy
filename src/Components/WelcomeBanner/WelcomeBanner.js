@@ -2,7 +2,7 @@
 
 export default function WelcomeBanner({ imageOne, imageTwo, hintClass, bannerOne, bannerTwo }) {
     return (
-        <section aria-label='home-banner' className="relative portrait:sm:w-[95%] portrait:w-full landscape:w-full landscape:pl-4 landscape:pr-4 mx-auto lg:mx-0 lg:w-full portrait:h-[30em] landscape:lg:h-[40em] landscape:h-[100vh] landscape:md:h-[100vh]">
+        <section aria-label='home-banner' className="relative portrait:sm:w-[95%] portrait:w-full landscape:w-full landscape:pl-4 landscape:pr-4 mx-auto lg:mx-0 lg:w-full portrait:h-[60vh] landscape:lg:h-[40em] landscape:h-[100vh] landscape:md:h-[100vh]">
             <figure className={`relative w-full h-full landscape:lg:h-[95%] flex flex-row items-center justify-center gap-x-2 overflow-hidden`}>
                 <img alt='' src={imageOne} className={`${bannerOne} relative w-full lg:w-[40%] h-[90%] hidden sm:block object-cover lg:block object-center`} />
                 <img alt='' src={imageTwo} className={`${bannerTwo} relative w-full lg:w-[40%] h-[90%] object-cover object-top`} />
