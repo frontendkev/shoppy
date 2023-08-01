@@ -74,7 +74,7 @@ export default function Limited({ children, btnClass, className }) {
 
             <div className="relatve portrait:w-[20.5em] portrait:sm:w-[31em] landscape:w-[31em] landscape:md:w-[41.5em] landscape:lg:w-[62.5em] mx-auto portrait:h-[15em] overflow-hidden landscape:h-[17em]">
                 
-                <div className="left-0 absolute landscape:lg:hidden landscape:xl:hidden z-10 w-full h-[4em] bottom-[50%] flex flex-row justify-between items-center pl-4 pr-4">
+                <div className="left-0 absolute landscape:lg:hidden landscape:xl:hidden z-10 w-full h-[4em] bottom-[40%] flex flex-row justify-between items-center pl-4 pr-4">
                     <button
                         onClick={() => scrollFunction('prev')}
                         ref={prevBtn}
