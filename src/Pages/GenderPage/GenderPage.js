@@ -235,7 +235,7 @@ export default function GenderPage() {
             </Limited>
 
 
-            <section className="relative w-full h-fit sm:h-[60vh] landscape:h-[100vh] flex flex-col lg:flex-row landscape:flex-row landscape:items-center landscape:lg:justify-center gap-y-4 lg:gap-x-3 landscape:pr-4 landscape:pl-4 landscape:lg:h-[35em] sm:flex-row landscape:md:h-[20em] landscape:md:pb-4 lg:pb-3 portrait:sm:h-[65vh] portrait:sm:pb-4">
+            <section className="relative w-full h-fit sm:h-[60vh] landscape:h-[100vh] flex flex-col lg:flex-row landscape:flex-row landscape:items-center landscape:lg:justify-center gap-y-[1.5em] lg:gap-x-3 landscape:pr-4 landscape:pl-4 landscape:lg:h-[35em] sm:flex-row landscape:md:h-[20em] landscape:md:pb-4 lg:pb-3 portrait:sm:h-[65vh] portrait:sm:pb-4 mb-[2em]">
                 <MediumCard
                     className={'medium-card transition-all duration-500 ease-in-out'} image={params.gender === 'female' ?  topShop:dateNight}
                     title={params.gender === 'female' ? "topshop" : "date-night-fits"}

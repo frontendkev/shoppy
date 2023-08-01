@@ -51,7 +51,7 @@ export default function Limited({ children, btnClass, className }) {
 
 
     return (
-        <div className={`${className} relative w-full h-fit portrait:sm:h-[30em] landscape:lg:h-[33em] landscape:lg:mt-0 landscape:lg:mb-0 mt-[3em] mb-[3em] pt-2 pb-2 sm:pt-4 sm:pb-2 md:mt-0 md:mb-0 flex flex-col landscape:lg:items-center gap-y-4 landscape:gap-y-2 landscape:lg:gap-y-2`}>
+        <div className={`${className} relative w-full h-fit portrait:sm:h-[30em] landscape:lg:h-[33em] landscape:lg:mt-0 landscape:lg:mb-0 mt-[3em] mb-[2em] pt-2 pb-2 sm:pt-4 sm:pb-2 md:mt-0 md:mb-0 flex flex-col landscape:lg:items-center gap-y-4 landscape:gap-y-2 landscape:lg:gap-y-2`}>
 
             <div className="relative w-[90%] lg:w-fit h-fit mx-auto text-center lg:pt-1">
                 <div className="relative w-[4em] landscape:lg:w-[6em] landscape:w-[5em] landscape:h-[1.6em] h-[1.7em] landscape:lg:h-[2em] mx-auto rounded-[4em] bg-gray-900 flex items-center justify-center">
