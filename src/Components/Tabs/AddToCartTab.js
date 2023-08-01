@@ -18,7 +18,7 @@ const AddToCartTab = ({ product, saveLastViewed, url, className }) => {
     return (
         
 
-        <section className={`${className} relative  landscape:md:w-[10em] landscape:lg:w-[15em] landscape:lg:h-[24em] landscape:xl:h-[30em] flex flex-col landscape:w-[11em] landscape:h-[20em] portrait:w-[10em] portrait:h-[20em] portrait:md:w-[11.55em] portrait:lg:w-[15em] portrait:lg:h-[25em] landscape:xl:pl-0`}>
+        <section className={`${className} relative  landscape:md:w-[10em] landscape:lg:w-[15em] landscape:lg:h-[24em] landscape:xl:h-[30em] flex flex-col landscape:w-[11em] landscape:h-[20em] portrait:w-full portrait:h-[35em] portrait:md:w-[11.55em] portrait:lg:w-[15em] portrait:lg:h-[25em] landscape:xl:pl-0`}>
            
                 <figure className={'relative w-full h-[80%] landscape:lg:h-[85%] portrait:h-[85%] portrait:sm:h-[80%] overflow-hidden'}>
                 <button onClick={(e) => sendToWishlist(e)} className="absolute rounded-full w-[2em] h-[2em] bottom-5 right-5 overflow-hidden flex items-center justify-center shadow-light landscape:md:w-[1.7em] landscape:md:h-[1.7em] landscape:w-[1.6em] landscape:h-[1.6em] landscape:bottom-3 landscape:right-3 portrait:w-[1.8em] portrait:h-[1.8em] portrait:bottom-3 portrait:right-3">

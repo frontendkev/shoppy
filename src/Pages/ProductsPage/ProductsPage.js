@@ -256,7 +256,7 @@ export default function ProductsPage () {
 
             <div className={'h-fit relative w-full'}>
 
-                <div className={' h-fit relative landscape:lg:w-[61.5em] portrait:sm:w-[31em] landscape:lg:pl-0 landscape:lg:pr-0 mx-auto portrait:md:w-[47.7em] portrait:lg:w-[61.5em] portrait:w-[20.5em] portrait:flex-row portrait:gap-x-2 flex landscape:flex-row flex-wrap portrait:lg:justify-start landscape:justify-start items-center landscape:gap-x-2 gap-y-[1.5em] portrait:gap-y-[1em] landscape:w-full landscape:md:gap-y-[1em] landscape:xl:w-[77em] landscape:md:w-[41.5em]'}>
+                <div className={' h-fit relative landscape:lg:w-[61.5em] portrait:sm:w-[31em] landscape:lg:pl-0 landscape:lg:pr-0 mx-auto portrait:md:w-[47.7em] portrait:lg:w-[61.5em] portrait:w-[90%] portrait:flex-col portrait:gap-x-2 flex landscape:flex-row flex-wrap portrait:lg:justify-start landscape:justify-start items-center landscape:gap-x-2 gap-y-[1.5em] portrait:gap-y-[1em] landscape:w-full landscape:md:gap-y-[1em] landscape:xl:w-[77em] landscape:md:w-[41.5em]'}>
                     {
                         items.map((product, index) => {
                             return (
@@ -273,7 +273,7 @@ export default function ProductsPage () {
                 </div>
 
             </div>
-            <div className="relative w-full h-[4em]">
+            <div className="relative w-full h-[2em] mb-2">
                 <div className="relative w-[80%] h-full mx-auto flex flex-row items-center justify-center gap-x-2">
                     {
                         pageNumbers.map((number, index) => {
