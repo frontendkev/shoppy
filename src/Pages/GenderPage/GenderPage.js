@@ -173,7 +173,7 @@ export default function GenderPage() {
 
             <section
             aria-label='home-categories'
-                className="relative portrait:w-full landscape:w-full landscape:lg:h-[65vh] landscape:md:h-[20em] portrait:sm:h-fit flex flex-col landscape:flex-row landscape:gap-x-4 landscape:justify-center landscape:pl-4 landscape:pr-4 md:flex-row justify-center gap-y-4 landscape:lg:gap-x-4 landscape:md:gap-x-4 sm:flex-row sm:h-[40vh] sm:gap-x-2 landscape:h-[80vh] overflow-hidden md:pr-4 md:pl-4 portrait:sm:gap-x-4">
+                className="relative portrait:w-full landscape:w-full landscape:lg:h-[65vh] landscape:md:h-[20em] portrait:sm:h-fit flex flex-col landscape:flex-row landscape:gap-x-4 landscape:justify-center landscape:pl-4 landscape:pr-4 md:flex-row justify-center landscape:gap-y-4 portrait:gap-y-[1.5em] landscape:lg:gap-x-4 landscape:md:gap-x-4 sm:flex-row sm:h-[40vh] sm:gap-x-2 landscape:h-[80vh] overflow-hidden md:pr-4 md:pl-4 portrait:sm:gap-x-4">
                 
                 <Link onClick={() => sendPageTitle(params.gender === 'female' ? 'shoppy design lingerie' : 'gifts for them/you')} to={params.gender === 'female' ?'/shoppy/female/lingerie': '/shopppy/male/collections'}>
                     <SimpleCard className={'card transition-all duration-500 ease-in-out'} image={params.gender === 'female' ? lingerie : gift} title={params.gender === 'female' ? "shoppy design lingerie": "gifts for them/you"} text={params.gender === 'female' ? "it's the little thing's..." : "aka our love language"} />

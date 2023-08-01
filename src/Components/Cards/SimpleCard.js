@@ -3,7 +3,7 @@
 
 export default function SimpleCard ({title, text, image, className}) {
     return (
-        <section className={`${className} relative sm:w-[10em] sm:h-full landscape:w-[9.5em] landscape:lg:w-[15.5em] landscape:min-h-full landscape:lg:h-full landscape:sm:h-full landscape:md:h-full landscape:md:w-[11em] md:w-[12em] mx-auto lg:mx-0 lg:w-[20em] lg:h-[90%] portrait:h-[30em] portrait:w-[80%] portrait:sm:w-[10em] portrait:sm:h-[20em]`}>
+        <section className={`${className} relative landscape:w-[9.5em] landscape:lg:w-[15.5em] landscape:min-h-full landscape:lg:h-full landscape:sm:h-full landscape:md:h-full landscape:md:w-[11em] mx-auto lg:mx-0 lg:h-[90%] portrait:h-[50em] portrait:w-[80%] portrait:sm:w-[10em] portrait:sm:h-[20em]`}>
             <figure className="w-full h-[90%] sm:h-[80%] lg:h-[80%] relative overflow-hidden shadow-light">
                 <img className='relative w-full lg:w-full md:mx-auto h-full object-cover object-top ' alt="" src={image} />
             </figure>
