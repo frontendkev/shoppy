@@ -85,7 +85,7 @@ export default function Wishlist() {
                 </h2>
             </section>
             
-            <div className={'relative portrait:w-[70%] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] min-h-[65vh] flex portrait:flex-col landscape:flex-row landscape:flex-wrap justify-start mx-auto landscape:gap-x-2 gap-y-[0.8em]'}>
+            <div className={'relative portrait:w-[70%] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] min-h-[65vh] flex portrait:flex-col landscape:flex-row landscape:flex-wrap justify-start mx-auto landscape:gap-x-2 gap-y-[2em]'}>
                 {
                     wishlist.map((product,index) => {
                         return (
