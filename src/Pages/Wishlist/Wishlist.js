@@ -26,7 +26,7 @@ export default function Wishlist() {
 
     const [currentPage, setCurrentPage] = useState(1)
 
-    const [itemsPerPage, setItemsPerPage] = useState(8)
+    const itemsPerPage = 8
 
 
     let lastItem = currentPage * itemsPerPage
@@ -85,7 +85,7 @@ export default function Wishlist() {
                 </h2>
             </section>
             
-            <div className={'relative portrait:w-[70%] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] min-h-[65vh] flex portrait:flex-col landscape:flex-row landscape:flex-wrap justify-start mx-auto landscape:gap-x-2 gap-y-[0.8em] bg-blue-500'}>
+            <div className={'relative portrait:w-[70%] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] min-h-[65vh] flex portrait:flex-col landscape:flex-row landscape:flex-wrap justify-start mx-auto landscape:gap-x-2 gap-y-[0.8em]'}>
                 {
                     wishlist.map((product,index) => {
                         return (
@@ -109,11 +109,11 @@ export default function Wishlist() {
                             return (
                                 <Link
                                     key={index}
-                                    onClick={(e) => setCurrentPage(c => number)}
+                                    onClick={() => setCurrentPage(() => number)}
                                     className={`relative flex items-center justify-center w-[1.5em] h-[1.5em] rounded-full hover:bg-rose-400 transition-all duration-300 ease-in-out
                                     ${currentPage === number ? 'bg-rose-400' : 'bg-rose-200'} ${pageNumbers.length > 1 ? 'opacity-[1]' : 'opacity-[0.5]'}`}
 
-                                >
+                                 to={'#'}>
                                     <h2 className="text-gray-800 text-[0.7em] text-center font-quicksandBold">
                                         {number}
                                     </h2>

@@ -11,9 +11,9 @@ export default function WishlistTab({wishlist, saveLastViewed, url, showModal, s
     return (
 
         <section
-            className={`relative h-fit portrait:w-full bg-red-500 landscape:w-[10em] landscape:md:w-[12em] flex flex-col`}>
+            className={`relative h-fit portrait:w-full landscape:w-[10em] landscape:md:w-[12em] flex flex-col`}>
 
-            <figure className={'relative w-full portrait:h-[28em] landscape:h-[80%] overflow-hidden'}>
+            <figure className={'relative w-full portrait:h-[35em] landscape:h-[80%] overflow-hidden'}>
                 <button onClick={() => showModal.toggleModal(true, modalMessage, wishlist.id)}
                         className="absolute rounded-full w-[2em] h-[2em] bottom-2 right-2 flexitems-center justify-center overflow-hidden">
                     <div className="absolute bg-red-800 opacity-[0.4] w-[2em] h-[2em] top-0 z-10">
