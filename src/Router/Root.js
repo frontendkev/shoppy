@@ -17,7 +17,7 @@ export default function Root() {
             {lastRoute !== "/" && <NavBar />}
             <Modal />
 
-            <main className="relative w-full min-h-screen">
+            <main>
                 <Outlet />
             </main>
             {lastRoute !== "/" && <AppFooter />}

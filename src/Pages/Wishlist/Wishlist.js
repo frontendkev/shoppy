@@ -76,7 +76,7 @@ export default function Wishlist() {
     return (
         <section className={'w-full h-full relative'}>
             <FabFits />
-            <section className="relative w-full h-[4.5em] portrait:h-[3em] flex flex-col items-center justify-center">
+            <section className="relative w-full mt-2 mb-2 h-[4.5em] portrait:h-[3em] flex flex-col items-center justify-center">
                 <h2 className="relative font-quicksandBold portrait:text-[1em] uppercase text-gray-600">
                     saved items
                 </h2>
@@ -85,7 +85,7 @@ export default function Wishlist() {
                 </h2>
             </section>
             
-            <div className={'relative portrait:w-[20.5em] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] h-fit flex flex-row flex-wrap justify-start mx-auto gap-x-2 gap-y-[0.8em]'}>
+            <div className={'relative portrait:w-[70%] landscape:w-[41.5em] landscape:md:w-[49.5em] landscape:lg:w-[62em] portrait:md:w-[41.5em] min-h-[65vh] flex portrait:flex-col landscape:flex-row landscape:flex-wrap justify-start mx-auto landscape:gap-x-2 gap-y-[0.8em] bg-blue-500'}>
                 {
                     wishlist.map((product,index) => {
                         return (
@@ -102,8 +102,8 @@ export default function Wishlist() {
                     })
                 }
             </div>
-            <div className="relative w-full h-[5em] mt-4">
-                <div className="relative w-[80%] h-full mx-auto flex flex-row items-center justify-center pt-8 gap-x-2">
+            <div className="relative w-full portrait:h-[3em] landscape:h-[2em] landscape:md:h-[4em]">
+                <div className="relative w-[80%] h-full mx-auto flex flex-row items-center justify-center gap-x-2">
                     {
                         pageNumbers.map((number, index) => {
                             return (
@@ -111,7 +111,7 @@ export default function Wishlist() {
                                     key={index}
                                     onClick={(e) => setCurrentPage(c => number)}
                                     className={`relative flex items-center justify-center w-[1.5em] h-[1.5em] rounded-full hover:bg-rose-400 transition-all duration-300 ease-in-out
-                                    ${currentPage === number ? 'bg-rose-400' : 'bg-rose-200'}`}
+                                    ${currentPage === number ? 'bg-rose-400' : 'bg-rose-200'} ${pageNumbers.length > 1 ? 'opacity-[1]' : 'opacity-[0.5]'}`}
 
                                 >
                                     <h2 className="text-gray-800 text-[0.7em] text-center font-quicksandBold">
