@@ -1,25 +1,12 @@
 import { useContext } from "react"
-import { DispatchContext, ShoppyContext, SWITCH_AUTH_METHOD, TOGGLE_MODAL, TOGGLE_SIDE_NAV, CLOSE_MODAL, SHOW_PAYMENT, SET_CRUMBS } from "./AppContext"
+import { DispatchContext, SWITCH_AUTH_METHOD, TOGGLE_MODAL, CLOSE_MODAL, SHOW_PAYMENT} from "./AppContext"
 
 
 
 export default function ContextActions() {
     const dispatchContext = useContext(DispatchContext)
-    const context = useContext(ShoppyContext)
 
-    function closeSideNav () {
-        return dispatchContext({
-            type: TOGGLE_SIDE_NAV,
-            payload: false
-        })
-    }
 
-    function toggleSideNav () {
-        return dispatchContext({
-            type: TOGGLE_SIDE_NAV,
-            payload: !context.toggleSideNav
-        })
-    }
 
     function closeModal() {
         return dispatchContext({
@@ -59,19 +46,11 @@ export default function ContextActions() {
         })
     }
 
-    function saveCrumb(crumbs) {
-        return dispatchContext({
-            type: SET_CRUMBS, 
-            payload:crumbs
-        })
-    }
+
     return {
-        closeSideNav,
-        toggleSideNav,
         toggleModal,
         closeModal,
         showPayments,
         toggleAuthMethod,
-        saveCrumb
     }
 }

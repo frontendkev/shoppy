@@ -1,10 +1,10 @@
 import ButtonSlide from "../ButtonWithSlide/ButtonSlide"
 import { Link, useParams } from "react-router-dom"
 
-export default function BottomNav({contextState}) {
+export default function BottomNav() {
    const params = useParams()
     return (
-        <section className={`${contextState.showNav ? 'block' : 'hidden'} w-full h-6 landscape:lg:h-[2em] relative bg-gray-600`}>
+        <section className={`w-full h-6 landscape:lg:h-[2em] relative bg-gray-600`}>
             <section className='relative w-full pl-1 landscape:lg:pl-4 h-full'>
                 <div className='relative w-full h-full flex flex-row '>
 
