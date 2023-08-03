@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import {useEffect, useState} from "react";
 import ArrowDown from "../../Svg/ArrowDown";
 import Check from "../../Svg/Check";
 
@@ -9,45 +8,46 @@ export const SelectDropDown = ({ children, id, optionsId, value, optBoxClass, sh
     const [translate, setTranslate] = useState(false)
     const container = document.getElementById(`${id}`)
     const options = document.getElementById(`${optionsId}`)
-    const [hideOptions, setHideOptions] = useState(false)
+    const [toggleOptions, setToggleOptions] = useState(false)
 
-    function showOptions() {
+    function displayOptions() {
         setTranslate(c => !translate)
     }
 
 
+    function hideOptions () {
+        options.classList.remove('z-10')
+        options.classList.remove('opacity-100')
+        options.classList.remove('max-h-[28em]')
+        options.classList.add('opacity-0')
+        options.classList.add('z-0')
+        options.classList.add('hidden')
+        setToggleOptions(c => false)
+    }
+
+    function showOptions () {
+        options.classList.add('opacity-100')
+        options.classList.add('z-10')
+        options.classList.add('max-h-[28em]')
+        options.classList.remove('opacity-0')
+        options.classList.remove('z-0')
+        options.classList.remove('hidden')
+        setToggleOptions(c => true)
+    }
 
     useEffect(() => {
         window.addEventListener('click', (event) => {
             if (container && !container.contains(event.target)) {
-                if (!hideOptions) {
-                    options.classList.remove('z-10')
-                    options.classList.remove('opacity-100')
-                    options.classList.remove('max-h-[28em]')
-                    options.classList.add('opacity-0')
-                    options.classList.add('z-0')
-                    options.classList.add('hidden')
-                    setHideOptions(c => false)
+                if (!toggleOptions) {
+                    return hideOptions()
                 }
             }
             else if (container && container.contains(event.target)) {
-                if (!hideOptions) {
-                    options.classList.add('opacity-100')
-                    options.classList.add('z-10')
-                    options.classList.add('max-h-[28em]')
-                    options.classList.remove('opacity-0')
-                    options.classList.remove('z-0')
-                    options.classList.remove('hidden')
-                    setHideOptions(c => true)
+                if (!toggleOptions) {
+                    return showOptions()
                 }
-                else if (hideOptions) {
-                    options.classList.remove('z-10')
-                    options.classList.remove('opacity-100')
-                    options.classList.remove('max-h-[28em]')
-                    options.classList.add('opacity-0')
-                    options.classList.add('z-0')
-                    options.classList.add('hidden')
-                    setHideOptions(c => false)
+                else if (toggleOptions) {
+                    return hideOptions()
                 }
             }
         })
@@ -59,7 +59,7 @@ export const SelectDropDown = ({ children, id, optionsId, value, optBoxClass, sh
             < hr style={{ marginBottom: "0.2em", borderTop: "0.5px solid rgb(0, 0, 0, 0.3)" }} />
             <div id={id} className={"relative portrait:w-[9em] landscape:w-[10em] landscape:md:w-[8em] portrait:h-[1.3em] landscape:h-[1.3em] landscape:pt-0 pt-1 bg-inherit landscape:lg:w-[10em] portrait:sm:w-[8em] portrait:sm:h-[1.3em] portrait:sm:pt-0 portrait:sm:gap-x-2 portrait:pt-0"}>
                 <div
-                    onClick={() => showOptions()}
+                    onClick={() => displayOptions()}
                     className={`absolute w-full h-fit z-5 bg-inherit cursor-pointer pl-1 pr-1`}>
 
                     <h2 className={"font-quicksandregular text-gray-500 capitalize portrait:text-[0.75em] landscape:text-[0.75em] float-left portrait:sm:text-[0.75em]"}>
@@ -103,7 +103,7 @@ export const SelectDropDown = ({ children, id, optionsId, value, optBoxClass, sh
 }
 
 
-export const PriceRange = ({ className, min, interval, med, max, getPrice }) => {
+export const PriceRange = ({ min, interval, max, getPrice }) => {
     return (
         <>
             <div className="relative w-full h-[4em] portrait:h-[2.7em] bg-gray-100 pt-[0.2em] portrait:sm:pl-[0.2em] pl-[0.5em] pr-[0.5em] text-start leading-[1.5em] portrait:leading-[1em]">

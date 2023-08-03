@@ -1,8 +1,7 @@
-
 import LogoCard from "../../Components/Cards/LogoCard";
 import MediumCard from "../../Components/Cards/MediumCard";
 import SimpleCard from "../../Components/Cards/SimpleCard";
-import { Link, useNavigation, useParams } from "react-router-dom";
+import {Link, useNavigation, useParams} from "react-router-dom";
 import femalebanner from '../../images/femalepage/femalebanner.jpeg'
 import femalebannertwo from '../../images/femalepage/femalebanner2.jpeg'
 import lingerie from '../../images/femalepage/lingerie.jpeg'
@@ -28,13 +27,13 @@ import TopWoman from '../../images/femalepage/topwoman.jpeg'
 import ClassyWoman from '../../images/femalepage/classywoman.jpeg'
 import WelcomeBanner from "../../Components/WelcomeBanner/WelcomeBanner";
 import sportsWear from '../../images/femalepage/sportswear.jpg'
-import { useEffect, useRef, useState } from "react";
-import { observeSingle, observeMultiple } from "../../Ui/Observers/Observers";
-import { styleOne, styleTwo, styleThree, styleFour } from "../../Ui/Observers/Styles/Styles";
+import {useEffect, useRef, useState} from "react";
+import {observeMultiple, observeSingle} from "../../Ui/Observers/Observers";
+import {styleFour, styleOne, styleThree, styleTwo} from "../../Ui/Observers/Styles/Styles";
 import SmallIntroCard from "../../Components/Cards/smallIntroCard";
 import RightArrow from "../../Svg/RightArrow";
 import LeftArrow from "../../Svg/LeftArrow";
-import malebanner from '../../images/malepage/malebanner.jpeg'
+import maleBanner from '../../images/malepage/malebanner.jpeg'
 import malebannertwo from '../../images/malepage/malebanner2.jpeg'
 import gift from '../../images/malepage/gift.jpeg';
 import layer from '../../images/malepage/layer.png'
@@ -55,12 +54,13 @@ import ellesselogo from '../../images/malebrands/ellesselogo.png';
 import northfacelogo from '../../images/malebrands/northfacelogo.png';
 import tommyhilfigerlogo from '../../images/malebrands/tommyhilfigerlogo.png';
 import Loading from "../../Components/Loaders/Loading";
+import Helpers from "../../Helpers/Helpers";
 
 export default function GenderPage() {
 
+    const {scrollFunction} = Helpers()
     const params = useParams()
 
-    const [slideWidth, setSlideWidth] = useState('')
 
     const [count, setCount] = useState(0)
     const length = 6
@@ -68,58 +68,14 @@ export default function GenderPage() {
     const nextBtn = useRef()
     const prevBtn = useRef()
     const navigation = useNavigation()
-    
+
+    function scroll (direction) {
+        return scrollFunction(direction, count, nextBtn, prevBtn, setCount, length)
+    }
 
     function sendPageTitle(title) {
         return localStorage.setItem('page-title', title)
     }
-
-    function scrollFunction(direction) {
-
-        switch (direction) {
-
-            case "next": {
-                if (count < length - 1) {
-                    nextBtn.current.disabled = false
-                    prevBtn.current.disabled = false
-                    return setCount(c => c + 1)
-                }
-                else if (count === length - 1) {
-                    nextBtn.current.disabled = true
-                    return setCount(c => count)
-                }
-                return;
-
-            }
-
-            case "prev": {
-                if (count > 0) {
-                    prevBtn.current.disabled = false
-                    nextBtn.current.disabled = false
-                    return setCount(c => c - 1)
-                }
-                else if (count === 0) {
-                    prevBtn.current.disabled = true
-                    return setCount(c => count)
-                }
-                return;
-            }
-
-            default: return direction
-        }
-
-
-
-    }
-
-    function checkScreenSize() {
-        if (window.innerWidth > 670) {
-            setSlideWidth(c => 'w-[100%]')
-        } else if (window.innerWidth < 670) {
-            setSlideWidth(c => 'w-[600%]')
-        }
-    }
-
 
 
 
@@ -150,9 +106,7 @@ export default function GenderPage() {
 
 
 
-    useEffect(() => {
-        checkScreenSize()
-    }, [])
+
 
     if (navigation.state === "loading") {
         window.scrollTo(0, 0)
@@ -167,7 +121,7 @@ export default function GenderPage() {
                 bannerOne={'banner-one transition-all duration-300 ease-in-out opacity-0'}
                 bannerTwo={'banner-two transition-all duration-300 ease-in-out opacity-0'}
                 hintClass={'hint transition-all duration-300 ease-in-out'}
-                imageOne={params.gender === 'female' ? femalebanner : malebanner}
+                imageOne={params.gender === 'female' ? femalebanner : maleBanner}
                 imageTwo={params.gender === 'female' ? femalebannertwo : malebannertwo} />
             
 
@@ -196,7 +150,7 @@ export default function GenderPage() {
 
             </section>
 
-            <Limited btnClass={'intro-btn transition-all duration-500 ease-in-out'} className={"bg-gradient-to-b from-transparent via-rose-500 to-transparent"}>
+            <Limited scrollFunction={scrollFunction} btnClass={'intro-btn transition-all duration-500 ease-in-out'} className={"bg-gradient-to-b from-transparent via-rose-500 to-transparent"}>
                 <SmallIntroCard
                     className={'left-intro'}
                     image={params.gender === 'female' ? GlamDresses : Season}
@@ -255,7 +209,7 @@ export default function GenderPage() {
             <section className="relative w-full landscape:lg:w-[90%] mx-auto lg:mx-auto lg:w-full h-[19em] landscape:h-[15em] overflow-hidden">
                 <div className="left-0 absolute landscape:lg:hidden z-10 w-full h-[4em] bottom-[35%] flex flex-row justify-between items-center pl-4 pr-4">
                     <button
-                        onClick={() => scrollFunction('prev')}
+                        onClick={() => scroll('prev')}
                         ref={prevBtn}
                         className="relative group w-[3em] h-[3em] rounded-full overflow-hidden">
                         <LeftArrow
@@ -268,7 +222,7 @@ export default function GenderPage() {
 
                     </button>
                     <button
-                        onClick={() => scrollFunction('next')}
+                        onClick={() => scroll('next')}
                         ref={nextBtn}
                         className="relative group w-[3em] h-[3em] rounded-full overflow-hidden">
                         <RightArrow

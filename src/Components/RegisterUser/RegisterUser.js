@@ -1,7 +1,5 @@
-import { useEffect, useState } from "react"
-import { Navigate, useNavigation } from "react-router-dom"
-import { DispatchContext } from "../../AppContext/AppContext"
-import ContextActions from "../../AppContext/ContextActions"
+import {useEffect, useState} from "react"
+import {useNavigation} from "react-router-dom"
 import telegram from '../../images/socials/telegram.png'
 import twitter from '../../images/socials/twitter.png'
 import facebook from '../../images/socials/facebook.png'
@@ -12,7 +10,6 @@ export default function RegisterUser() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
-    const contextActions = ContextActions()
     const navigation = useNavigation()
     const [loginClass, setLoginClass] = useState('translate-x-[-4em] opacity-0')
 
@@ -36,6 +33,7 @@ export default function RegisterUser() {
                 <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
                     <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                         <img
+                            alt={'telegram logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={telegram} />
                     </figure>
@@ -49,6 +47,7 @@ export default function RegisterUser() {
                 <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2">
                     <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                         <img
+                            alt={'twitter logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={twitter} />
                     </figure>
@@ -62,6 +61,7 @@ export default function RegisterUser() {
                 <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
                     <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                         <img
+                            alt={'facebook logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={facebook} />
                     </figure>

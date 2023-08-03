@@ -1,13 +1,11 @@
-
-import {useEffect, useState, useId} from "react";
-import { axiosInstance } from "./Axios/axios";
+import {useEffect, useState} from "react";
+import {axiosInstance} from "./Axios/axios";
 import girlPhoto from '../images/femalepage/sportswear.jpg';
 import './upload.css';
 
 const UploadService = () => {
 
 
-    const id = useId()
     const [file, setFile] = useState("");
     const [name, setName] = useState('');
     const [price, setPrice] = useState(0);
@@ -97,7 +95,7 @@ const UploadService = () => {
             <div className={'w-[100%] h-[180vh] gap-x-[1em] relative mx-auto bg-black flex flex-row pt-4'}>
               
                     <figure className={'relative bg-blue-500 w-[30%] h-[50%] mx-auto'}>
-                        <img className={'w-full h-full object-contain drop-shadow-2xl'} src={file ? file : girlPhoto} />
+                        <img alt={'image to upload'} className={'w-full h-full object-contain drop-shadow-2xl'} src={file ? file : girlPhoto} />
                     </figure>
                     <div className={' w-[30%] h-full gap-y-2 flex items-start flex-col pt-4'}>
                         <label htmlFor={'image'} className={'text-sm font-quicksand font-bold text-white'}>select an image</label>
@@ -135,7 +133,7 @@ const UploadService = () => {
                         </select>
 
                         <label htmlFor={'description'} className={'text-sm font-quicksand font-bold text-white'}>product description</label>
-                        <textarea id={'description'} name='desc' value={description} onChange={(e) => setDescription(c => e.target.value)} className={'w-[90%] h-[5em] outline-2 outline-blue-600 border-2 border-blue-300'} type={"text"} placeholder={'product description'} />
+                        <textarea id={'description'} name='desc' value={description} onChange={(e) => setDescription(c => e.target.value)} className={'w-[90%] h-[5em] outline-2 outline-blue-600 border-2 border-blue-300'} placeholder={'product description'} />
 
 
                         <label htmlFor={'gender'} className={'text-sm font-quicksand font-bold text-white'}>gender</label>

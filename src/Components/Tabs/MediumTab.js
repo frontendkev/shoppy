@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import './tabs.css'
 
 export default function MediumTab(props) {
@@ -32,7 +32,9 @@ export default function MediumTab(props) {
 
             <div className='absolute md:relative w-full md:w-[50%] h-full z-[7]'>
                 <figure className={'med-tab-image-reverse w-full h-full pl-2 absolute right-0'}>
-                    <img className={'w-full h-full object-contain relative right-[-9em] md:right-[0em] bottom-[-1.5em]'}
+                    <img
+                        alt={'link image here'}
+                        className={'w-full h-full object-contain relative right-[-9em] md:right-[0em] bottom-[-1.5em]'}
                         src={props.image} />
                 </figure>
             </div>

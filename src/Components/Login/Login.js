@@ -1,8 +1,7 @@
-import { useCallback, useState, useContext, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useNavigate, useNavigation } from "react-router-dom"
-import ContextActions from "../../AppContext/ContextActions"
-import { loginUser } from "../../Redux/ThunkServices/thunkConnections"
+import {useEffect, useState} from "react"
+import {useDispatch, useSelector} from "react-redux"
+import {useNavigate, useNavigation} from "react-router-dom"
+import {loginUser} from "../../Redux/ThunkServices/thunkConnections"
 import telegram from '../../images/socials/telegram.png'
 import twitter from '../../images/socials/twitter.png'
 import facebook from '../../images/socials/facebook.png'
@@ -10,13 +9,11 @@ import facebook from '../../images/socials/facebook.png'
 
 export default function Login() {
     const reduxDispatch = useDispatch()
-    const { toggleAuthMethod } = ContextActions()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const auth = useSelector(store => store.auth)
     const navigate = useNavigate()
     const [loginClass, setLoginClass] = useState('translate-x-[4em] opacity-0')
-    const path = useNavigate()
     const navigation = useNavigation()
 
     const submitLogin = (e) => {
@@ -32,7 +29,6 @@ export default function Login() {
     useEffect(() => {
         function redirect() {
             if (auth.isLoggedIn) return navigate(-1)
-            return;
         }
         redirect()
     }, [auth.isLoggedIn])
@@ -87,6 +83,7 @@ export default function Login() {
                     <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
                         <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                             <img
+                                alt={'telegram logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={telegram} />
                         </figure>
@@ -100,6 +97,7 @@ export default function Login() {
                     <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2">
                         <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                             <img
+                                alt={'twitter logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={twitter} />
                         </figure>
@@ -113,6 +111,7 @@ export default function Login() {
                     <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
                         <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
                             <img
+                                alt={'facebook logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={facebook} />
                         </figure>

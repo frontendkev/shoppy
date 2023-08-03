@@ -1,9 +1,7 @@
 
-import { PayPalScriptProvider } from "@paypal/react-paypal-js"
-import { PayPalButtons } from "@paypal/react-paypal-js"
 
 
-export default function Checkout({ items, totalPriceSum, showModal }) {
+export default function Checkout({ totalPriceSum, showModal }) {
     const modalPage = "checkout"
     const modalText = "close modal"
     return (
@@ -35,9 +33,6 @@ export default function Checkout({ items, totalPriceSum, showModal }) {
                     </div>
                     < hr />
                 </div>
-                <PayPalScriptProvider>
-                    <PayPalButtons />
-                </PayPalScriptProvider>
                 <button onClick={() => showModal(true, modalText, modalPage)} className="relative w-full h-[3em] bg-green-700 text-[0.9em] font-quicksandbold uppercase font-black text-white">
                     checkout
                 </button>

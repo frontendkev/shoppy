@@ -1,8 +1,8 @@
-import { useRef, useState } from "react"
+import {useRef, useState} from "react"
 import LeftArrow from "../../Svg/LeftArrow"
 import RightArrow from "../../Svg/RightArrow"
 
-export default function Limited({ children, btnClass, className }) {
+export default function Limited({ children, btnClass, className, scrollFunction }) {
 
     const [count, setCount] = useState(0)
     const length = 6
@@ -10,45 +10,10 @@ export default function Limited({ children, btnClass, className }) {
     const nextBtn = useRef()
     const prevBtn = useRef()
 
-    function scrollFunction(direction) {
 
-        switch (direction) {
-
-            case "next": {
-                if (count < length - 1) {
-                    nextBtn.current.disabled = false
-                    prevBtn.current.disabled = false
-                    return setCount(c => c + 1)
-                }
-                else if (count === length - 1) {
-                    nextBtn.current.disabled = true
-                    return setCount(c => count)
-                }
-                return;
-
-            }
-
-            case "prev": {
-                if (count > 0) {
-                    prevBtn.current.disabled = false
-                    nextBtn.current.disabled = false
-                    return setCount(c => c - 1)
-                }
-                else if (count === 0) {
-                    prevBtn.current.disabled = true
-                    return setCount(c => count)
-                }
-                return;
-            }
-
-            default: return direction
+        function scroll (direction) {
+            return scrollFunction(direction, count, nextBtn, prevBtn, setCount, length)
         }
-
-
-
-    }
-
-
 
     return (
         <div className={`${className} relative w-full h-fit portrait:sm:h-[30em] landscape:lg:h-[33em] landscape:lg:mt-0 landscape:lg:mb-0 mt-[3em] mb-[2em] pt-2 pb-2 sm:pt-4 sm:pb-2 md:mt-0 md:mb-0 flex flex-col landscape:lg:items-center gap-y-4 landscape:gap-y-2 landscape:lg:gap-y-2`}>
@@ -76,7 +41,7 @@ export default function Limited({ children, btnClass, className }) {
                 
                 <div className="left-0 absolute landscape:lg:hidden landscape:xl:hidden z-10 w-full h-[4em] bottom-[40%] flex flex-row justify-between items-center pl-4 pr-4">
                     <button
-                        onClick={() => scrollFunction('prev')}
+                        onClick={() => scroll('prev')}
                         ref={prevBtn}
                         className="relative group w-[3em] h-[3em] rounded-full overflow-hidden shadow-light">
                         <LeftArrow
@@ -89,7 +54,7 @@ export default function Limited({ children, btnClass, className }) {
 
                     </button>
                     <button
-                        onClick={() => scrollFunction('next')}
+                        onClick={() => scroll('next')}
                         ref={nextBtn}
                         className="relative group w-[3em] h-[3em] rounded-full overflow-hidden shadow-light">
                         <RightArrow
