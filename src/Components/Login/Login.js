@@ -33,7 +33,7 @@ export default function Login() {
         redirect()
     }, [auth.isLoggedIn])
     return (
-        <div className={`${loginClass} transition-all duration-300 ease-in-out relative z-20 w-[100%] mx-auto h-[30em] pt-[2em] bg-white` }>
+        <div className={`${loginClass} transition-all duration-300 ease-in-out relative z-20 w-[100%] mx-auto portrait:h-[80vh] landscape:h-[30em] pt-[2em] bg-white` }>
 
             <form onSubmit={(e) => submitLogin(e)} className={`flex flex-col gap-y-[2em] w-[50%] h-fit mx-auto `}>
 
@@ -79,43 +79,43 @@ export default function Login() {
                    </h2>
                 </div>
 
-                <div className="relative w-full h-[3em] gap-x-2 flex flex-row pl-4 pr-4">
-                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
-                        <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+                <div className="relative w-full h-[3em] gap-x-2 flex flex-row justify-center portrait:pl-2 portrait:pr-2 landscape:pr-4 landscape:pl-4">
+                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                        <figure className="relative w-[2em] h-full pt-[0.8em]">
                             <img
                                 alt={'telegram logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={telegram} />
                         </figure>
-                        <div className="relative w-full h-full pt-[0.8em]">
+                        <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                             <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                                 telegram
                             </h2>
-                       </div>
+                        </div>
                     </button>
 
-                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2">
-                        <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                        <figure className="relative w-[2em] h-full pt-[0.8em]">
                             <img
                                 alt={'twitter logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={twitter} />
                         </figure>
-                        <div className="relative w-full h-full pt-[0.8em]">
+                        <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                             <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                                 twitter
                             </h2>
                         </div>
                     </button>
 
-                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
-                        <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+                    <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                        <figure className="relative w-[2em] h-full pt-[0.8em]">
                             <img
                                 alt={'facebook logo here'}
                                 className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                                 src={facebook} />
                         </figure>
-                        <div className="relative w-full h-full pt-[0.8em]">
+                        <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                             <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                                 facebook
                             </h2>
