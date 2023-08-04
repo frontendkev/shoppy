@@ -33,7 +33,7 @@ export default function Login() {
         redirect()
     }, [auth.isLoggedIn])
     return (
-        <div className={`${loginClass} transition-all duration-300 ease-in-out relative z-20 w-[100%] mx-auto portrait:h-[80vh] landscape:h-[30em] pt-[2em] bg-white` }>
+        <div className={`${loginClass} transition-all duration-300 ease-in-out relative z-20 w-full mx-auto portrait:h-[80vh] landscape:h-[30em] pt-[2em] bg-white` }>
 
             <form onSubmit={(e) => submitLogin(e)} className={`flex flex-col gap-y-[2em] w-[50%] h-fit mx-auto `}>
 

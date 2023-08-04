@@ -16,7 +16,7 @@ export default function AuthPage() {
 
 
     return (
-        <div className={`relative w-full h-fit bg-gray-200 portrait:pt-1 landscape:pt-4`}>
+        <div className={`relative w-full h-fit bg-gray-200 portrait:pt-1 landscape:pt-4 overflow-hidden`}>
             <div className="relative w-[10em] portrait:h-[3em] landscape:h-[4em] mx-auto">
                 <h1 className="font-quicksandBold text-gray-500 portrait:text-[2em] landscape:text-[2.2em] uppercase text-center">
                     shoppy
@@ -48,7 +48,7 @@ export default function AuthPage() {
                 </Link>
             </div>
             < hr style={{width: '40em', borderTop: '1px solid rgb(0, 0, 0, 0.2)', margin: '0 auto'}} />
-            <div className="relative portrait:w-full landscape:w-[40em] h-fit mx-auto portrait:pb-0 landscape:pb-8">
+            <div className="relative portrait:w-full landscape:w-[40em] h-fit mx-auto portrait:pb-0 landscape:pb-8 overflow-hidden">
                 <Outlet />
             </div>
         </div>
