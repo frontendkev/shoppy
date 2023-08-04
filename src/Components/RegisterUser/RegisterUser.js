@@ -23,49 +23,49 @@ export default function RegisterUser() {
     return (
         <div className={`${loginClass} transition-all duration-300 ease-in-out relative z-20 w-full mx-auto h-[48em] bg-white`}>
 
-            <div className="relative w-full h-[4em] pt-2 ">
+            <div className="relative w-full portrait:h-[3em] landscape:h-[4em] flex items-center justify-center ">
                 <h2 className="uppercase font-quicksandBold text-gray-700 text-[1.2em]">
                     sign up with...
                 </h2>
             </div>
 
-            <div className="relative w-full h-[3em] gap-x-2 flex flex-row pl-4 pr-4">
-                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
-                    <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+            <div className="relative w-full h-[3em] gap-x-2 flex flex-row justify-center portrait:pl-2 portrait:pr-2 landscape:pr-4 landscape:pl-4">
+                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                    <figure className="relative w-[2em] h-full pt-[0.8em]">
                         <img
                             alt={'telegram logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={telegram} />
                     </figure>
-                    <div className="relative w-full h-full pt-[0.8em]">
+                    <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                         <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                             telegram
                         </h2>
                     </div>
                 </button>
 
-                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2">
-                    <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                    <figure className="relative w-[2em] h-full pt-[0.8em]">
                         <img
                             alt={'twitter logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={twitter} />
                     </figure>
-                    <div className="relative w-full h-full pt-[0.8em]">
+                    <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                         <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                             twitter
                         </h2>
                     </div>
                 </button>
 
-                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 ">
-                    <figure className="relative w-[2em] h-full float-left pt-[0.8em]">
+                <button className="relative w-full h-full outline outline-2 outline-gray-300 pl-2 pr-2 flex flex-row justify-center">
+                    <figure className="relative w-[2em] h-full pt-[0.8em]">
                         <img
                             alt={'facebook logo here'}
                             className="relative w-[1.5em] h-[1.5em] mx-auto rounded-full"
                             src={facebook} />
                     </figure>
-                    <div className="relative w-full h-full pt-[0.8em]">
+                    <div className="relative landscape:w-[6em] h-full pt-[0.8em]">
                         <h2 className="font-quicksandBold text-gray-700 uppercase text-[1em]">
                             facebook
                         </h2>
@@ -73,7 +73,7 @@ export default function RegisterUser() {
                 </button>
             </div>
 
-            <div className="relative w-full h-[5em] pt-[0.8em]">
+            <div className="relative w-full portrait:h-[7em] landscape:h-[5em] flex items-center justify-center portrait:pl-3 portrait:pr-3">
                 <p className="font-quicksandregular font-bold text-center leading-[1.7em] text-[0.8em] text-gray-600 lowercase"> <span className="uppercase">s</span>igning up with social is super quick. <span className="uppercase">n</span>o extra passwords to remember - no brain fail. < br />
                 <span className="uppercase">d</span>on't worry , we'd never share any of your data or post anything on your behalf #notevil
                 </p>
