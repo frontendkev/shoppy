@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import BreadCrumbs from "../../Components/BreadCrumbs/BreadCrumbs";
 import Filter from "../../Components/Filter/Filter";
 import {PriceRange, SelectDropDown} from "../../Components/DropDown/SelectDropDown"
-import {sortProducts, femaleCategory, femaleBrand, femaleBodyFit, femaleSize} from '../../Components/Filter/FilterLinks'
+import {femaleBodyFit, femaleBrand, femaleCategory, femaleSize, sortProducts} from '../../Components/Filter/FilterLinks'
 import Loading from "../../Components/Loaders/Loading";
 import {Options} from "../../Components/DropDown/Options";
 
@@ -248,7 +248,7 @@ export default function ProductsPage() {
                     </h1>
                 </section>}
 
-            <div className={'h-fit relative w-full'}>
+            <div className={'min-h-[78vh] relative w-full'}>
 
                 <div
                     className={' h-fit relative landscape:lg:w-[61.5em] portrait:sm:w-[31em] landscape:lg:pl-0 landscape:lg:pr-0 mx-auto portrait:md:w-[47.7em] portrait:lg:w-[61.5em] portrait:w-[70%] portrait:flex-col portrait:gap-x-2 flex landscape:flex-row flex-wrap portrait:lg:justify-start landscape:justify-start items-center landscape:gap-x-2 gap-y-[1.5em] portrait:gap-y-[1em] landscape:w-full landscape:md:gap-y-[1em] landscape:xl:w-[77em] landscape:md:w-[41.5em]'}>
@@ -292,4 +292,3 @@ export default function ProductsPage() {
         </section>
     )
 }
-
