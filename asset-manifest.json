@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shoppy/static/css/main.a2028706.css",
-    "main.js": "/shoppy/static/js/main.18d95903.js",
+    "main.css": "/shoppy/static/css/main.3f3c57a5.css",
+    "main.js": "/shoppy/static/js/main.c11a18b8.js",
     "static/css/606.0c2289d5.chunk.css": "/shoppy/static/css/606.0c2289d5.chunk.css",
     "static/js/606.fb89372d.chunk.js": "/shoppy/static/js/606.fb89372d.chunk.js",
     "static/js/624.a5f1b73f.chunk.js": "/shoppy/static/js/624.a5f1b73f.chunk.js",
@@ -40,11 +40,12 @@
     "static/media/gift.jpeg": "/shoppy/static/media/gift.7ba77d985f6a35412223.jpeg",
     "static/media/sportswear.jpg": "/shoppy/static/media/sportswear.a50ee1c72d71159dfa7f.jpg",
     "static/media/obey.jpeg": "/shoppy/static/media/obey.2691e57089d0de43e5e1.jpeg",
+    "static/media/home.png": "/shoppy/static/media/home.29ddce22c5d4c418b5c8.png",
     "static/media/facebook.png": "/shoppy/static/media/facebook.a7e1e913f1801c1d7e2c.png",
     "static/media/layer.png": "/shoppy/static/media/layer.30bb2de1c3f2a0bad97b.png",
     "index.html": "/shoppy/index.html",
-    "main.a2028706.css.map": "/shoppy/static/css/main.a2028706.css.map",
-    "main.18d95903.js.map": "/shoppy/static/js/main.18d95903.js.map",
+    "main.3f3c57a5.css.map": "/shoppy/static/css/main.3f3c57a5.css.map",
+    "main.c11a18b8.js.map": "/shoppy/static/js/main.c11a18b8.js.map",
     "606.0c2289d5.chunk.css.map": "/shoppy/static/css/606.0c2289d5.chunk.css.map",
     "606.fb89372d.chunk.js.map": "/shoppy/static/js/606.fb89372d.chunk.js.map",
     "624.a5f1b73f.chunk.js.map": "/shoppy/static/js/624.a5f1b73f.chunk.js.map",
@@ -53,7 +54,7 @@
     "787.8bfa6160.chunk.js.map": "/shoppy/static/js/787.8bfa6160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a2028706.css",
-    "static/js/main.18d95903.js"
+    "static/css/main.3f3c57a5.css",
+    "static/js/main.c11a18b8.js"
   ]
 }
