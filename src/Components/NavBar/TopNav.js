@@ -10,7 +10,7 @@ export default function TopNav({wishlist, cartCount}) {
     return (
         <section className='relative w-full portrait:h-[40px] landscape:h-[2.3em] portrait:sm:h-[2.3em] landscape:lg:h-[2.5em] bg-gray-800 top-menu'>
 
-            <section className='relative w-full h-full mx-auto flex flex-row portrait:sm:flex-row pl-1 pr-1 md:p-0 landscape:flex-row landscape:gap-x-0 landscape:lg:gap-x-4 landscape:pr-2 landscape:pl-2 portrait:sm:justify-between'>
+            <section className='relative w-full h-full mx-auto flex flex-row portrait:gap-x-2 portrait:sm:flex-row pl-1 pr-1 md:p-0 landscape:flex-row landscape:gap-x-0 landscape:lg:gap-x-4 landscape:pr-2 landscape:pl-2 portrait:sm:justify-between'>
 
 
                 <div className="relative w-fit portrait:h-[40px] landscape:h-full portrait:sm:w-fit flex flex-row gap-x-2 md:gap-x-4 items-center portrait:sm:gap-x-[0.6em] landscape:w-[30%]">
@@ -48,7 +48,7 @@ export default function TopNav({wishlist, cartCount}) {
 
 
                 <div className="relative w-full portrait:h-[40px] landscape:h-full portrait:sm:w-[70%] flex flex-row portrait:gap-x-2 landscape:gap-x-4 md:gap-x-4 landscape:justify-between portrait:sm:justify-between portrait:sm:items-center landscape:items-center landscape:w-[70%] landscape:pr-2">
-                    <div className='relative w-[75%] landscape:lg:w-[45em] portrait:h-[40px] portrait:sm:h-[75%] landscape:h-[75%] md:h-full'>
+                    <div className='relative w-[75%] landscape:lg:w-[45em] portrait:h-[30px] portrait:pt-1 landscape:h-[75%] md:h-full'>
                         <SearchBar />
                     </div>
 
