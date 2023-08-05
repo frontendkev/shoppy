@@ -3,6 +3,7 @@ import {SearchBar} from "../SearchBar/SearchBar"
 import User from "../../Svg/User"
 import Heart from "../../Svg/Heart"
 import Bag from "../../Svg/Bag"
+import homeLogo from '../../images/logo/home.png'
 
 
 export default function TopNav({wishlist, cartCount}) {
@@ -16,10 +17,10 @@ export default function TopNav({wishlist, cartCount}) {
                 <div className="relative w-fit portrait:h-[40px] landscape:h-full portrait:sm:w-fit flex flex-row gap-x-2 md:gap-x-4 items-center portrait:sm:gap-x-[0.6em] landscape:w-[30%]">
 
                     
-                    <Link to={'/'} className={'relative w-fit h-[20px]'}>
-                            <h1 className='text-white font-quicksandBold lowercase text-[13px] landscape:md:text-[1em] text-center portrait:sm:text-[1em] landscape:text-[1em]'>
-                                shoppy
-                            </h1>
+                    <Link to={'/'} className={'relative portrait:w-[20px] landscape:lg:w-[25px] h-[20px]'}>
+                            <figure className={'relative w-full h-full'}>
+                                <img src={homeLogo} alt={'logo here'} />
+                            </figure>
                     </Link>
 
                     <div className="relative h-[20px] mt-[0.3em] md:h-[60%] outline outline-[0.1em] outline-gray-500">
