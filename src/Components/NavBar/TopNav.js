@@ -62,7 +62,7 @@ export default function TopNav({wishlist, cartCount}) {
 
                         <Link to={`/shoppy/${params.gender}/wishlist`} className={'relative w-[30px] h-[30px]'}>
                             <div className='relative w-full h-full'>
-                                <div className='absolute w-5 h-5 rounded-full right-[-0.3em] md:right-1 top-2 landscape:w-4 landscape:h-4 landscape:md:h-5 landscape:md:w-5 portrait:w-4 portrait:h-4 portrait:sm:h-[1.2em] portrait:sm:w-[1.2em] flex justify-center items-center overflow-hidden'>
+                                <div className='absolute w-5 h-5 rounded-full portrait:right-[-5px] portrait:bottom-0 landscape:right-[-0.3em] md:right-1 top-2 landscape:w-4 landscape:h-4 landscape:md:h-5 landscape:md:w-5 portrait:w-4 portrait:h-4 portrait:sm:h-[1.2em] portrait:sm:w-[1.2em] flex justify-center items-center overflow-hidden'>
                                     <div className="absolute w-full h-full bg-red-500 opacity-80 z-[5]">
 
                                     </div>
@@ -77,7 +77,7 @@ export default function TopNav({wishlist, cartCount}) {
 
                         <Link to={`shoppy/${params.gender}/cart`} className={'relative w-[30px] h-[30px]'}>
                             <div className='relative w-full h-full'>
-                                <div className='absolute w-5 h-5 rounded-full right-[-0.3em] md:right-1 top-2 landscape:w-4 landscape:h-4 landscape:md:h-5 landscape:md:w-5 portrait:w-4 portrait:h-4 portrait:sm:h-[1.2em] portrait:sm:w-[1.2em] flex justify-center items-center overflow-hidden'>
+                                <div className='absolute w-5 h-5 rounded-full portrait:right-[-5px] landscape:right-[-0.3em] md:right-1 top-2 landscape:w-4 landscape:h-4 landscape:md:h-5 landscape:md:w-5 portrait:w-4 portrait:h-4 portrait:sm:h-[1.2em] portrait:sm:w-[1.2em] flex justify-center items-center overflow-hidden'>
                                     <div className="absolute w-full h-full bg-red-500 opacity-80 z-[5]">
 
                                     </div>
