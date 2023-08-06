@@ -23,73 +23,67 @@ import GenderPage from "../Pages/GenderPage/GenderPage"
 
 export default function Routes() {
     const auth = useSelector(store => store.auth)
-    const { getRequest } = Connections()
+    const {getRequest} = Connections()
 
     const routes = createHashRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Root />}>
+            <Route path="/" element={<Root/>}>
 
-                <Route index element={<Home />} />
+                <Route index element={<Home/>}/>
 
-                <Route path="shoppy/verification" element={<AuthPage />}>
-                    <Route path="login" element={<Login />} />
-                    <Route path="register" element={<RegisterUser />} />
+                <Route path="shoppy/verification" element={<AuthPage/>}>
+                    <Route path="login" element={<Login/>}/>
+                    <Route path="register" element={<RegisterUser/>}/>
                 </Route>
-                <Route element={<PrivateRoutes auth={auth} />}>
-                    <Route path="shoppy/dashboard" element={<DashBoard />} />
+                <Route element={<PrivateRoutes auth={auth}/>}>
+                    <Route path="shoppy/dashboard" element={<DashBoard/>}/>
                 </Route>
 
                 <Route
                     path="shoppy/:gender"
-                    element={<Shoppy />}
-                    loader={({ params }) => {
+                    element={<Shoppy/>}
+                    loader={({params}) => {
                         return {
                             gender: params.gender
                         }
                     }}
                     handle={{
-                        crumb: (data) => <Link to={`/shoppy/${data.gender}`} >{data.gender}</Link>
+                        crumb: (data) => <Link to={`/shoppy/${data.gender}`}>{data.gender}</Link>
                     }}
                 >
-                    
+
                     <Route
                         index
                         element={
-                            <GenderPage />
+                            <GenderPage/>
                         }
                     />
 
                     <Route
                         path=":type"
-                        element={<ProductsListings />}
-                        loader={({ params }) => {
+                        element={<ProductsListings/>}
+                        loader={({params}) => {
                             return {
                                 gender: params.gender,
                                 type: params.type
                             }
                         }}
                         handle={{
-                            crumb: (data) => <Link to={`/shoppy/${data.gender}/${data.type}`} >{data.type}</Link>
+                            crumb: (data) => <Link to={`/shoppy/${data.gender}/${data.type}`}>{data.type}</Link>
                         }}
                     >
                         <Route
                             index
-                            element={<ProductsPage />}
-                            loader={({ params }) => {
+                            element={<ProductsPage/>}
+                            loader={({params}) => {
                                 return getRequest(`/products?gender=${params.gender}&type_like=${params.type}`)
-                            }} />
-
-
-
-
-
-                        
+                            }}/>
 
 
                         <Route
                             path=":title"
-                            element={<ProductPage />}
-                            loader={({ params }) => {
+                            element={<ProductPage/>}
+                            loader={({params}) => {
                                 return getRequest(`/products?gender=${params.gender}&type_like=${params.type}`)
                             }}
                             handle={{
@@ -102,62 +96,58 @@ export default function Routes() {
 
                     <Route
                         path="winter"
-                        element={<ProductsPage />}
-                        loader={({ params }) => {
+                        element={<ProductsPage/>}
+                        loader={({params}) => {
                             return getRequest(`/products?gender=${params.gender}&type_like=sweatshirt&type_like=hoodie`)
                         }}
                         handle={{
-                            crumb: (params) => <Link path={`/shoppy/${params.gender}/winter`} >winter</Link>
+                            crumb: (params) => <Link path={`/shoppy/${params.gender}/winter`}>winter</Link>
                         }}
                     />
 
                     <Route
                         path="collections"
-                        element={<ProductsPage />}
-                        loader={({ params }) => {
+                        element={<ProductsPage/>}
+                        loader={({params}) => {
                             return getRequest(`/products?gender=${params.gender}`)
                         }}
                         handle={{
-                            crumb: (params) => <Link path={`/shoppy/${params.gender}/collections`} >collections</Link>
+                            crumb: (params) => <Link path={`/shoppy/${params.gender}/collections`}>collections</Link>
                         }}
                     />
 
 
-                   
-
-                   
-
                     <Route
                         path="search/:searchParam"
-                        element={<ProductsPage />}
-                        loader={({ params }) => {
+                        element={<ProductsPage/>}
+                        loader={({params}) => {
                             return getRequest(`/products?q=${params.searchParam}`)
                         }}
                         handle={{
                             crumb: () => <Link>search</Link>
                         }}
                     />
-              
+
                     <Route
                         path="wishlist"
-                        element={<Wishlist />}
+                        element={<Wishlist/>}
                     />
 
                     <Route
                         path="cart"
-                        element={<ShoppingCart />}
+                        element={<ShoppingCart/>}
                     />
 
 
                     <Route
                         path="uploadpage"
-                        element={<UploadService />}
+                        element={<UploadService/>}
                     />
 
                     <Route
                         path="server"
-                        element={<UploadPage />}
-                        errorElement={<ErrorPage />}
+                        element={<UploadPage/>}
+                        errorElement={<ErrorPage/>}
                         loader={async () => {
                             let fetch = await axiosInstance.get('products')
                             return fetch.data
@@ -165,7 +155,7 @@ export default function Routes() {
                     />
 
                 </Route>
-                <Route path="*" element={<main> <h2>this route does not exist</h2></main>} />
+                <Route path="*" element={<main><h2>this route does not exist</h2></main>}/>
 
             </Route>
         )
