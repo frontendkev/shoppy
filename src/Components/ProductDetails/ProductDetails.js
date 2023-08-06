@@ -1,9 +1,10 @@
-import { useState } from "react";
+import {useState} from "react";
 import Bag from "../../Svg/Bag";
 import Heart from "../../Svg/Heart";
 import DynamicButton from "../Buttons/DynamicButton";
 import ProductDropDown from "../DropDown/ProductDropDown";
 import Star from "../../Svg/Star";
+
 function ProductBanner({ product, addToBag, image, getImage, updateWishlist }) {
     const [color, setColor] = useState('')
 
@@ -49,7 +50,7 @@ function ProductBanner({ product, addToBag, image, getImage, updateWishlist }) {
                     </div>
                 </div>
 
-                <div className="relative h-full landscape:w-[20em] landscape:xl:w-[30em] portrait:w-[20em] portrait:md:w-[30em]">
+                <div className="relative portrait:h-[500px] landscape:h-full landscape:w-[20em] landscape:xl:w-[30em] portrait:w-[20em] portrait:md:w-[30em]">
                     <figure className="relative w-full h-full">
                         <img src={image ? image : product[0] && product[0].image.file} className={'relative w-full h-full object-top object-cover'} alt='' />
                     </figure>

@@ -1,7 +1,5 @@
-
-
 import Heart from '../../Svg/Heart'
-import { Link } from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Line from '../Line/Line'
 import Close from '../../Svg/Close'
 
@@ -29,7 +27,7 @@ export default function CartItems({ items, removeItem, increaseItem, reduceItem,
                         return (
                             <>
                                 <div key={index} className='relative portrait:mx-auto portrait:sm:mx-0 landscape:w-full landscape:lg:h-[10em] portrait:w-[16em] portrait:sm:w-full portrait:h-fit landscape:h-[9em] portrait:sm:h-[10em] flex portrait:flex-col portrait:sm:flex-row landscape:flex-row gap-x-2'>
-                                    <figure className="relative landscape:lg:w-[8em] landscape:w-[7em] portrait:sm:w-[10em] h-full portrait:sm:h-full portrait:h-[20em] overflow-hidden ">
+                                    <figure className="relative landscape:lg:w-[8em] landscape:w-[7em] portrait:sm:w-[10em] landscape:h-full portrait:sm:h-full portrait:h-[380px] overflow-hidden ">
                                         <img src={cartItem.image} className='relative w-full h-full object-cover object-top mx-auto ' alt='' />
                                     </figure>
 
