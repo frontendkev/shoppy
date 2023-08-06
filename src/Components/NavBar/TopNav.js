@@ -23,24 +23,24 @@ export default function TopNav({wishlist, cartCount}) {
                             </figure>
                     </Link>
 
-                    <div className="relative h-[20px] mt-[0.3em] md:h-[60%] outline outline-[0.1em] outline-gray-500">
+                    <div className="relative h-[10px] mt-[0.3em] md:h-[60%] outline outline-[0.1em] outline-gray-500">
 
                     </div>
 
                     <Link to='shoppy/female' className={'relative w-fit h-[20px]'}>
-                            <h1 className='text-white font-quicksandBold lowercase text-[13px] landscape:md:text-[1em]  portrait:sm:text-[1em] landscape:text-[1em]'>
+                            <h1 className='text-white font-quicksandBold lowercase text-[15px] landscape:md:text-[1em]  portrait:sm:text-[1em] landscape:text-[1em]'>
                                 women
                             </h1>
                     </Link>
 
 
 
-                    <div className="relative h-[20px] md:h-[60%] mt-[0.3em] outline outline-[0.1em] outline-gray-500">
+                    <div className="relative h-[10px] md:h-[60%] mt-[0.3em] outline outline-[0.1em] outline-gray-500">
 
                     </div>
 
                     <Link to='shoppy/male' className={'relative w-fit h-[20px]'}>
-                            <h1 className={`text-white font-quicksandBold lowercase text-[13px] landscape:md:text-[1em]  portrait:sm:text-[1em] landscape:text-[1em]`}>
+                            <h1 className={`text-white font-quicksandBold lowercase text-[15px] landscape:md:text-[1em]  portrait:sm:text-[1em] landscape:text-[1em]`}>
                                 men
                             </h1>
                     </Link>
