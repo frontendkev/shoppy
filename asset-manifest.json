@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/shoppy/static/css/main.32201a03.css",
-    "main.js": "/shoppy/static/js/main.c9a52849.js",
+    "main.css": "/shoppy/static/css/main.2ce77a36.css",
+    "main.js": "/shoppy/static/js/main.b78a5eab.js",
     "static/css/606.0c2289d5.chunk.css": "/shoppy/static/css/606.0c2289d5.chunk.css",
     "static/js/606.fb89372d.chunk.js": "/shoppy/static/js/606.fb89372d.chunk.js",
     "static/js/624.a5f1b73f.chunk.js": "/shoppy/static/js/624.a5f1b73f.chunk.js",
@@ -44,8 +44,8 @@
     "static/media/facebook.png": "/shoppy/static/media/facebook.a7e1e913f1801c1d7e2c.png",
     "static/media/layer.png": "/shoppy/static/media/layer.30bb2de1c3f2a0bad97b.png",
     "index.html": "/shoppy/index.html",
-    "main.32201a03.css.map": "/shoppy/static/css/main.32201a03.css.map",
-    "main.c9a52849.js.map": "/shoppy/static/js/main.c9a52849.js.map",
+    "main.2ce77a36.css.map": "/shoppy/static/css/main.2ce77a36.css.map",
+    "main.b78a5eab.js.map": "/shoppy/static/js/main.b78a5eab.js.map",
     "606.0c2289d5.chunk.css.map": "/shoppy/static/css/606.0c2289d5.chunk.css.map",
     "606.fb89372d.chunk.js.map": "/shoppy/static/js/606.fb89372d.chunk.js.map",
     "624.a5f1b73f.chunk.js.map": "/shoppy/static/js/624.a5f1b73f.chunk.js.map",
@@ -54,7 +54,7 @@
     "787.8bfa6160.chunk.js.map": "/shoppy/static/js/787.8bfa6160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.32201a03.css",
-    "static/js/main.c9a52849.js"
+    "static/css/main.2ce77a36.css",
+    "static/js/main.b78a5eab.js"
   ]
 }
