@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/shoppy/static/css/main.3bcba97e.css",
-    "main.js": "/shoppy/static/js/main.e3aba50a.js",
+    "main.css": "/shoppy/static/css/main.bd30b5f9.css",
+    "main.js": "/shoppy/static/js/main.a18531c9.js",
     "static/css/606.0c2289d5.chunk.css": "/shoppy/static/css/606.0c2289d5.chunk.css",
-    "static/js/606.fb89372d.chunk.js": "/shoppy/static/js/606.fb89372d.chunk.js",
+    "static/js/606.cfa96c80.chunk.js": "/shoppy/static/js/606.cfa96c80.chunk.js",
     "static/js/624.a5f1b73f.chunk.js": "/shoppy/static/js/624.a5f1b73f.chunk.js",
     "static/css/157.0c2289d5.chunk.css": "/shoppy/static/css/157.0c2289d5.chunk.css",
-    "static/js/157.495993fe.chunk.js": "/shoppy/static/js/157.495993fe.chunk.js",
+    "static/js/157.8727caa6.chunk.js": "/shoppy/static/js/157.8727caa6.chunk.js",
     "static/js/787.8bfa6160.chunk.js": "/shoppy/static/js/787.8bfa6160.chunk.js",
     "static/media/male.jpeg": "/shoppy/static/media/male.eb9184a6fc04cb797bf0.jpeg",
     "static/media/skintone.jpeg": "/shoppy/static/media/skintone.e303f6fe831090610adf.jpeg",
@@ -44,17 +44,17 @@
     "static/media/facebook.png": "/shoppy/static/media/facebook.a7e1e913f1801c1d7e2c.png",
     "static/media/layer.png": "/shoppy/static/media/layer.30bb2de1c3f2a0bad97b.png",
     "index.html": "/shoppy/index.html",
-    "main.3bcba97e.css.map": "/shoppy/static/css/main.3bcba97e.css.map",
-    "main.e3aba50a.js.map": "/shoppy/static/js/main.e3aba50a.js.map",
+    "main.bd30b5f9.css.map": "/shoppy/static/css/main.bd30b5f9.css.map",
+    "main.a18531c9.js.map": "/shoppy/static/js/main.a18531c9.js.map",
     "606.0c2289d5.chunk.css.map": "/shoppy/static/css/606.0c2289d5.chunk.css.map",
-    "606.fb89372d.chunk.js.map": "/shoppy/static/js/606.fb89372d.chunk.js.map",
+    "606.cfa96c80.chunk.js.map": "/shoppy/static/js/606.cfa96c80.chunk.js.map",
     "624.a5f1b73f.chunk.js.map": "/shoppy/static/js/624.a5f1b73f.chunk.js.map",
     "157.0c2289d5.chunk.css.map": "/shoppy/static/css/157.0c2289d5.chunk.css.map",
-    "157.495993fe.chunk.js.map": "/shoppy/static/js/157.495993fe.chunk.js.map",
+    "157.8727caa6.chunk.js.map": "/shoppy/static/js/157.8727caa6.chunk.js.map",
     "787.8bfa6160.chunk.js.map": "/shoppy/static/js/787.8bfa6160.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3bcba97e.css",
-    "static/js/main.e3aba50a.js"
+    "static/css/main.bd30b5f9.css",
+    "static/js/main.a18531c9.js"
   ]
 }
