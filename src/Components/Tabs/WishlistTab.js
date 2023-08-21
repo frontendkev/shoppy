@@ -30,11 +30,11 @@ export default function WishlistTab({wishlist, saveLastViewed, url, showModal, s
                     {wishlist.title.slice(0, 20) + '...'}
                 </h1>
                 <h2 className="font-quicksandBold text-red-700 uppercase text-[0.7em]">
-                    NGN {Number(wishlist.price).toLocaleString()} - {wishlist.discount + '%'}
+                    $ {Number(wishlist.price).toLocaleString()} - {wishlist.discount + '%'}
                 </h2>
 
                 <h2 className="font-quicksandBold text-gray-700 uppercase text-[0.7em]">
-                    NGN {wishlist.discountPrice.toLocaleString()}
+                    $ {wishlist.discountPrice.toLocaleString()}
                 </h2>
                 <button
                     onClick={() => sendToBag(wishlist, wishlist.image, wishlist.color)}

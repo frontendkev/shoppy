@@ -34,9 +34,9 @@ const AddToCartTab = ({ product, saveLastViewed, url, className }) => {
                         {product.title.slice(0, 40)+'...'}
                     </h1>
                 <h2 className="font-quicksandBold text-red-700 uppercase text-[0.7em] landscape:text-[0.65em] landscape:leading-[1.3em] portrait:text-[0.65em] portrait:leading-[1.3em]">
-                    NGN {Number(product.price).toLocaleString()} - {product.discount + '%'} < br />
+                    $ {Number(product.price).toLocaleString()} - {product.discount + '%'} < br />
                     <span className="text-gray-700">
-                        NGN {Number(product.price - product.price * product.discount / 100).toLocaleString()}
+                        $ {Number(product.price - product.price * product.discount / 100).toLocaleString()}
                    </span>
                     </h2>
 
