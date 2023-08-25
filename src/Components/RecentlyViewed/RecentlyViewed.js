@@ -1,9 +1,10 @@
-import { useState, useRef, useEffect } from "react"
+import {useEffect, useRef, useState} from "react"
 import LeftArrow from "../../Svg/LeftArrow"
 import RightArrow from "../../Svg/RightArrow"
 import Heart from "../../Svg/Heart"
-import { useSelector, useDispatch } from "react-redux"
-import { clearLastViewed } from "../../Redux/ReduxSlices/ProductsSlice"
+import {useDispatch, useSelector} from "react-redux"
+import {clearLastViewed} from "../../Redux/ReduxSlices/ProductsSlice"
+import {Link} from "react-router-dom"
 
 export default function RecentlyViewed() {
     const dispatch = useDispatch()
@@ -21,7 +22,7 @@ export default function RecentlyViewed() {
 
         if (index === lastViewed.length - 1) {
             NextRef.current.disabled = true
-            return setIndex(c => index)
+            return setIndex(() => index)
         }
 
         setIndex(c => c + 1)
@@ -36,7 +37,7 @@ export default function RecentlyViewed() {
 
         if (index === 0) {
 
-            setIndex(c => 0)
+            setIndex(() => 0)
 
             return PrevRef.current.disabled = true
         }
@@ -45,12 +46,12 @@ export default function RecentlyViewed() {
         return PrevRef.current.disabled = false
     }
 
-
+    console.log(lastViewed)
 
     useEffect(() => {
         if (window.innerWidth >= 360) return setWidth(10.5)
         else if (window.innerWidth >= 768) return setWidth(10.5)
-
+        
         
     }, [window.innerWidth])
 
@@ -98,7 +99,7 @@ export default function RecentlyViewed() {
                         {
                             lastViewed && lastViewed && lastViewed.map((item, index) => {
                                 return (
-                                    <div key={index} className="relative landscape:w-[10em] portrait:w-[10em] h-full overflow-hidden">
+                                    <Link to={`/shoppy/${item.type}/${item.title}`} key={index} className="relative landscape:w-[10em] portrait:w-[10em] h-full overflow-hidden z-[50]">
                                         <figure className="relative w-full h-full overflow-hidden">
                                             <div className="absolute rounded-full w-[2em] h-[2em] portrait:w-[1.8em] portrait:h-[1.8em] bottom-3 right-3 overflow-hidden z-10 flex items-center justify-center">
                                                 <div className="absolute bg-white opacity-[0.4] w-[2em] h-[2em]">
@@ -107,7 +108,7 @@ export default function RecentlyViewed() {
                                             </div>
                                             <img className="relative w-full h-full object-cover object-top" src={item.image} alt='' />
                                         </figure>
-                                    </div>
+                                    </Link>
                                 )
                             })
                         }

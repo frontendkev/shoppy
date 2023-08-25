@@ -1,5 +1,4 @@
-
-import { lazy, Suspense } from "react"
+import {lazy, Suspense} from "react"
 import ActionGetters from "../../Redux/ActionGetters/ActionGetters"
 
 const ProductTab = lazy(() => import('../../Components/Tabs/ProductTab'))
@@ -26,7 +25,7 @@ export default function SameProducts({sameItems, getImage}) {
                                         product={sameProduct}
                                         getImage={getImage}
                                         saveLastViewed={saveLastViewed}
-                                        url={`/shoppy/${sameProduct.gender}/${sameProduct.type}/${sameProduct.title}`}
+                                        url={`/shoppy/${sameProduct.type}/${sameProduct.title}`}
                                     />
                                 </Suspense>
                             )

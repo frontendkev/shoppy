@@ -1,6 +1,5 @@
 import {createHashRouter, createRoutesFromElements, Link, Route} from "react-router-dom"
 import Root from "./Root"
-import Home from "../Pages/Home/Home"
 import ProductsListings from "./ProductsListings"
 import ProductsPage from "../Pages/ProductsPage/ProductsPage"
 import ProductPage from "../Pages/ProductPage/ProductPage"
@@ -27,56 +26,46 @@ export default function Routes() {
 
     const routes = createHashRouter(
         createRoutesFromElements(
-            <Route path="/" element={<Root/>}>
-
-                <Route index element={<Home/>}/>
-
-                <Route path="shoppy/verification" element={<AuthPage/>}>
-                    <Route path="login" element={<Login/>}/>
-                    <Route path="register" element={<RegisterUser/>}/>
-                </Route>
-                <Route element={<PrivateRoutes auth={auth}/>}>
-                    <Route path="shoppy/dashboard" element={<DashBoard/>}/>
-                </Route>
-
+            <Route path="/" element={<Root />}>
                 <Route
-                    path="shoppy/:gender"
+                    index
+                    element={
+                        <GenderPage />
+                    }
+                />
+                <Route
+                    path="shoppy"
                     element={<Shoppy/>}
-                    loader={({params}) => {
-                        return {
-                            gender: params.gender
-                        }
-                    }}
                     handle={{
-                        crumb: (data) => <Link to={`/shoppy/${data.gender}`}>{data.gender}</Link>
+                        crumb: () => <Link to={`/shoppy`}>shoppy</Link>
                     }}
                 >
 
-                    <Route
-                        index
-                        element={
-                            <GenderPage/>
-                        }
-                    />
+                    <Route path="verification" element={<AuthPage />}>
+                        <Route path="login" element={<Login />} />
+                        <Route path="register" element={<RegisterUser />} />
+                    </Route>
+                    <Route element={<PrivateRoutes auth={auth} />}>
+                        <Route path="dashboard" element={<DashBoard />} />
+                    </Route>
 
                     <Route
                         path=":type"
                         element={<ProductsListings/>}
                         loader={({params}) => {
                             return {
-                                gender: params.gender,
                                 type: params.type
                             }
                         }}
                         handle={{
-                            crumb: (data) => <Link to={`/shoppy/${data.gender}/${data.type}`}>{data.type}</Link>
+                            crumb: (data) => <Link to={`/shoppy/${data.type}`}>{data.type}</Link>
                         }}
                     >
                         <Route
                             index
                             element={<ProductsPage/>}
                             loader={({params}) => {
-                                return getRequest(`/products?gender=${params.gender}&type_like=${params.type}`)
+                                return getRequest(`/products?gender=female&type_like=${params.type}`)
                             }}/>
 
 
@@ -84,7 +73,7 @@ export default function Routes() {
                             path=":title"
                             element={<ProductPage/>}
                             loader={({params}) => {
-                                return getRequest(`/products?gender=${params.gender}&type_like=${params.type}`)
+                                return getRequest(`/products?gender=female&type_like=${params.type}`)
                             }}
                             handle={{
                                 crumb: (data) => <Link to={'#'}>{data[0].title.slice(0, 20) + '...'}</Link>
@@ -97,11 +86,11 @@ export default function Routes() {
                     <Route
                         path="winter"
                         element={<ProductsPage/>}
-                        loader={({params}) => {
-                            return getRequest(`/products?gender=${params.gender}&type_like=sweatshirt&type_like=hoodie`)
+                        loader={() => {
+                            return getRequest(`/products?gender=female&type_like=sweatshirt&type_like=hoodie`)
                         }}
                         handle={{
-                            crumb: (params) => <Link path={`/shoppy/${params.gender}/winter`}>winter</Link>
+                            crumb: () => <Link to={'#'} path={`/shoppy/winter`}>winter</Link>
                         }}
                     />
 
@@ -109,10 +98,10 @@ export default function Routes() {
                         path="collections"
                         element={<ProductsPage/>}
                         loader={({params}) => {
-                            return getRequest(`/products?gender=${params.gender}`)
+                            return getRequest(`/products?gender=female`)
                         }}
                         handle={{
-                            crumb: (params) => <Link path={`/shoppy/${params.gender}/collections`}>collections</Link>
+                            crumb: () => <Link path={`/shoppy/collections`}>collections</Link>
                         }}
                     />
 

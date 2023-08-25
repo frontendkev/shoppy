@@ -20,7 +20,7 @@ export default function WishlistTab({wishlist, saveLastViewed, url, showModal, s
                     </div>
                     <Trash className={'relative w-[1em] h-[1em] mx-auto z-10'}/>
                 </button>
-                <Link to={url} onClick={() => saveLastViewed(wishlist.id, wishlist.title, wishlist.image)}>
+                <Link to={url} onClick={() => saveLastViewed(wishlist.id, wishlist.title, wishlist.type, wishlist.image)}>
                     <img className={'w-full h-full object-cover relative object-top'}
                          src={wishlist.image && wishlist.image} alt=''/>
                 </Link>

@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import {createContext, useReducer} from "react";
 
 export const ShoppyContext = createContext()
 export const DispatchContext = createContext()
@@ -44,11 +44,6 @@ export const ContextReducer = (state, { type, payload }) => {
         case CLOSE_MODAL: {
             return {
                 ...state, toggleModal: payload.show
-            }
-        }
-        case SHOW_PAYMENT: {
-            return {
-                ...state, toggleModal: payload.show, modalText: payload.text, modalPage: payload.page
             }
         }
         case SWITCH_AUTH_METHOD: {

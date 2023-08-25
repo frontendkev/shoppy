@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 export default function Section({ image, text, url }) {
 
     return (
-            <section aria-label={'categories-section'} className={'relative landscape:w-[50%] portrait:w-full portrait:h-[50%] landscape:h-full landscape:hover:w-[55%] md:transition-all md:duration-300 md:ease-in-out'}>
+            <section aria-label={'categories-section'} className={'relative w-full h-full'}>
                 <figure className='relative w-full h-full'>
-                    <img alt='' src={image} className='relative w-full h-full object-cover object-top' />
+                    <img alt='' src={image} className='relative w-full h-full object-contain' />
                 </figure>
 
                 <div className="absolute w-full h-[15em] z-[5] bottom-0 flex flex-col justify-center items-center gap-y-4">

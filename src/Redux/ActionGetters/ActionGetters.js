@@ -1,19 +1,20 @@
-import { useDispatch } from "react-redux";
-import { updateLastViewed, filterProducts, startFetch, saveLastSeen } from "../ReduxSlices/ProductsSlice";
-import { saveCart, updateCart } from "../ReduxSlices/CartSlice";
-import { checkInStorage } from "../ReduxHelpers/ReduxHelpers";
-import { saveWishlist } from "../ReduxSlices/WishlistSlice";
-import { toast } from "react-toastify";
+import {useDispatch} from "react-redux";
+import {filterProducts, saveLastSeen, startFetch, updateLastViewed} from "../ReduxSlices/ProductsSlice";
+import {saveCart, updateCart} from "../ReduxSlices/CartSlice";
+import {checkInStorage} from "../ReduxHelpers/ReduxHelpers";
+import {saveWishlist} from "../ReduxSlices/WishlistSlice";
+import {toast} from "react-toastify";
 
 
 export default function ActionGetters() {
 
     const reduxDispatch = useDispatch()
 
-    function saveLastViewed(id, title, image) {
+    function saveLastViewed(id, title, type, image) {
         let item = {
             id: id,
             title: title,
+            type: type,
             image: image,
             time: new Date().toString()
         }
@@ -34,7 +35,7 @@ export default function ActionGetters() {
         }
     }
 
-    function addToBag(product, image, color, size) {
+    function addToBag(product, image, color) {
         const checkStorage = checkInStorage('cart')
         if (!checkStorage) {
             reduxDispatch(saveCart({ item: product, image: image, color: color }))

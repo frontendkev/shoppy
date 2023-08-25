@@ -30,11 +30,10 @@ export default function ProductsPage() {
     const [sort, setSort] = useState('recommended')
     const [brand, setBrand] = useState('all')
     const [category, setCategory] = useState('all')
-    const gender = localStorage.getItem('gender')
     const params = useParams()
 
 
-    const [postsPerPage, setPostsPerPage] = useState(15)
+    const postsPerPage = 15
     const lastPost = currentPage * postsPerPage
     const firstPost = lastPost - postsPerPage
     const pageNumbers = []
@@ -57,14 +56,14 @@ export default function ProductsPage() {
         data.event.preventDefault()
         setSort(c => data.value)
         getPage(1)
-        return Sort({type: data.sort, items: products.products, gender: gender})
+        return Sort({type: data.sort, items: products.products})
     }
 
     function filterBrand(data) {
         data.event.preventDefault()
         setBrand(c => data.value)
         getPage(1)
-        return Sort({type: 'brand', items: loaderData, brand: data.value, gender: gender})
+        return Sort({type: 'brand', items: loaderData, brand: data.value})
     }
 
     const getPrice = () => {
@@ -251,7 +250,7 @@ export default function ProductsPage() {
             <div className={'min-h-[78vh] relative w-full'}>
 
                 <div
-                    className={' h-fit relative landscape:lg:w-[61.5em] portrait:sm:w-[31em] landscape:lg:pl-0 landscape:lg:pr-0 mx-auto portrait:md:w-[47.7em] portrait:lg:w-[61.5em] portrait:w-[70%] portrait:flex-col portrait:gap-x-2 flex landscape:flex-row flex-wrap portrait:lg:justify-start landscape:justify-start items-center landscape:gap-x-2 gap-y-[1.5em] portrait:gap-y-[1em] landscape:w-full landscape:md:gap-y-[1em] landscape:xl:w-[77em] landscape:md:w-[41.5em]'}>
+                    className={' h-fit relative landscape:lg:w-[61.5em] portrait:sm:w-[31em] landscape:lg:pl-0 landscape:lg:pr-0 mx-auto portrait:md:w-[46em] portrait:lg:w-[61.5em] portrait:w-[70%] portrait:flex-col portrait:sm:flex-row portrait:gap-x-2 flex landscape:flex-row flex-wrap portrait:lg:justify-start landscape:justify-start items-center landscape:gap-x-2 gap-y-[1.5em] portrait:gap-y-[1em] landscape:w-full landscape:md:gap-y-[1em] landscape:xl:w-[77em] landscape:md:w-[41.5em]'}>
                     {
                         items.map((product, index) => {
                             return (
@@ -260,7 +259,7 @@ export default function ProductsPage() {
                                         className={'card transition-all duration-500 ease-in-out'}
                                         product={product}
                                         saveLastViewed={saveLastViewed}
-                                        url={`/shoppy/${product.gender}/${product.type}/${product.title}`}/>
+                                        url={`/shoppy/${product.type}/${product.title}`}/>
                                 </Suspense>
                             )
                         })

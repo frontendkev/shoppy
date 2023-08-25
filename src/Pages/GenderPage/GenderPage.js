@@ -2,8 +2,6 @@ import LogoCard from "../../Components/Cards/LogoCard";
 import MediumCard from "../../Components/Cards/MediumCard";
 import SimpleCard from "../../Components/Cards/SimpleCard";
 import {Link, useNavigation, useParams} from "react-router-dom";
-import femalebanner from '../../images/femalepage/femalebanner.jpeg'
-import femalebannertwo from '../../images/femalepage/femalebanner2.jpeg'
 import topShop from '../../images/femalepage/topshop.jpeg'
 import classy from '../../images/femalepage/classy.jpeg'
 import monkl from '../../images/femalebrands/monkl.png'
@@ -29,31 +27,15 @@ import {styleFour, styleOne, styleThree, styleTwo} from "../../Ui/Observers/Styl
 import SmallIntroCard from "../../Components/Cards/smallIntroCard";
 import RightArrow from "../../Svg/RightArrow";
 import LeftArrow from "../../Svg/LeftArrow";
-import maleBanner from '../../images/malepage/malebanner.jpeg'
-import malebannertwo from '../../images/malepage/malebanner2.jpeg'
-import Season from '../../images/malepage/season.jpeg'
-import CoupleGoal from '../../images/malepage/couplegoal.jpeg'
-import BestDeals from '../../images/malepage/best_deals.jpeg'
-import TopMan from '../../images/malepage/top_man.jpeg'
-import Brand from '../../images/malepage/brand.jpeg'
-import StreetWear from '../../images/malepage/streetwear.jpeg'
-import dateNight from '../../images/malepage/datenight.jpeg'
-import topman from '../../images/malepage/topman.jpeg'
-import adidaslogo from '../../images/malebrands/adidaslogo.png';
-import carharttlogo from '../../images/malebrands/carharttlogo.png';
-import drmartenslogo from '../../images/malebrands/drmartenslogo.png';
-import ellesselogo from '../../images/malebrands/ellesselogo.png';
-import northfacelogo from '../../images/malebrands/northfacelogo.png';
-import tommyhilfigerlogo from '../../images/malebrands/tommyhilfigerlogo.png';
 import Loading from "../../Components/Loaders/Loading";
 import GenderPageHelpers from "../../Helpers/GenderPageHelpers";
+import femaleBanner from '../../images/femalepage/femalebanner.jpeg'
+import femaleBannerTwo from '../../images/femalepage/femalebanner2.jpeg'
 
 export default function GenderPage() {
 
-    const {scrollFunction, updateGender} = GenderPageHelpers()
+    const {scrollFunction, Links} = GenderPageHelpers()
     const params = useParams()
-    const [links, setLinks] = useState()
-
 
     const [count, setCount] = useState(0)
     const length = 6
@@ -69,7 +51,6 @@ export default function GenderPage() {
     function sendPageTitle(title) {
         return localStorage.setItem('page-title', title)
     }
-
 
     useEffect(() => {
         const hints = document.querySelectorAll(".hint")
@@ -95,12 +76,7 @@ export default function GenderPage() {
 
     }, [])
 
-
-    useEffect(() => {
-        const setGender = () => updateGender(params.gender)
-        setLinks(() => setGender().link)
-    }, [params.gender])
-
+   
 
     if (navigation.state === "loading") {
         window.scrollTo(0, 0)
@@ -112,19 +88,20 @@ export default function GenderPage() {
             bannerOne={'banner-one transition-all duration-300 ease-in-out opacity-0'}
             bannerTwo={'banner-two transition-all duration-300 ease-in-out opacity-0'}
             hintClass={'hint transition-all duration-300 ease-in-out'}
-            imageOne={params.gender === 'female' ? femalebanner : maleBanner}
-            imageTwo={params.gender === 'female' ? femalebannertwo : malebannertwo}/>
+            imageOne={femaleBanner}
+            imageTwo={femaleBannerTwo}/>
 
 
         <section
             aria-label='home-categories'
-            className="relative portrait:w-full landscape:w-full landscape:lg:h-[65vh] landscape:md:h-[20em] portrait:sm:h-fit flex flex-col landscape:flex-row landscape:gap-x-4 landscape:justify-center landscape:pl-4 landscape:pr-4 md:flex-row justify-center landscape:gap-y-4 portrait:gap-y-[1.5em] landscape:lg:gap-x-4 landscape:md:gap-x-4 sm:flex-row sm:h-[40vh] sm:gap-x-2 landscape:h-[80vh] overflow-hidden md:pr-4 md:pl-4 portrait:sm:gap-x-4">
+            className="relative portrait:w-full landscape:w-full landscape:lg:h-[65vh] landscape:md:h-[20em] portrait:sm:h-fit flex flex-col landscape:flex-row landscape:gap-x-4 landscape:justify-center landscape:pl-4 landscape:pr-4 md:flex-row justify-center landscape:gap-y-4 portrait:gap-y-[1.5em] landscape:lg:gap-x-4 landscape:md:gap-x-4 sm:flex-row sm:h-[40vh] sm:gap-x-2 landscape:h-[80vh] overflow-hidden md:pr-4 md:pl-4 portrait:sm:gap-x-4 overflow-hidden">
 
 
             {
-                links && links.map((link) => {
+                Links && Links.map((link, i) => {
                     return (
                         <Link
+                            key={i}
                             onClick={() => sendPageTitle(link.title)}
                             to={link.url}>
                             <SimpleCard className={'card transition-all duration-500 ease-in-out'}
@@ -143,54 +120,54 @@ export default function GenderPage() {
                  className={"bg-gradient-to-b from-transparent via-rose-500 to-transparent"}>
             <SmallIntroCard
                 className={'left-intro'}
-                image={params.gender === 'female' ? GlamDresses : Season}
-                text={params.gender === 'female' ? 'glam dresses' : 'guy season'}
+                image={GlamDresses}
+                text={'glam dresses'}
             />
 
             <SmallIntroCard
                 className={'left-intro'}
-                image={params.gender === 'female' ? SkinTone : CoupleGoal}
-                text={params.filter === 'female' ? 'skin tone' : 'couple goals'}
+                image={SkinTone}
+                text={'skin tone'}
             />
 
             <SmallIntroCard
                 className={'left-intro'}
-                image={params.gender === 'female' ? DayTimeWoman : BestDeals}
-                text={params.gender === 'female' ? 'daytime woman' : 'best deals'}
+                image={DayTimeWoman}
+                text={'daytime woman'}
             />
 
             <SmallIntroCard
                 className={'right-intro'}
-                image={params.gender === 'female' ? VictoriasSecret : TopMan}
-                text={params.gender === 'female' ? 'victoria secret' : 'top-man'}
+                image={VictoriasSecret}
+                text={'victoria secret'}
             />
 
             <SmallIntroCard
                 className={'right-intro'}
-                image={params.gender === 'female' ? TopWoman : Brand}
-                text={params.gender === 'female' ? 'top woman' : 'top brands'}
+                image={TopWoman}
+                text={'top woman'}
             />
 
             <SmallIntroCard
                 className={'right-intro'}
-                image={params.gender === 'female' ? ClassyWoman : StreetWear}
-                text={params.filter === 'female' ? 'classy woman' : "street'wearz"}
+                image={ClassyWoman}
+                text={'classy woman'}
             />
         </Limited>
 
 
         <section
-            className="relative w-full h-fit sm:h-[60vh] landscape:h-[100vh] flex flex-col lg:flex-row landscape:flex-row landscape:items-center landscape:lg:justify-center gap-y-[1.5em] lg:gap-x-3 landscape:pr-4 landscape:pl-4 landscape:lg:h-[35em] sm:flex-row landscape:md:h-[20em] landscape:md:pb-4 lg:pb-3 portrait:sm:h-[65vh] portrait:sm:pb-4 mb-[2em]">
+            className="relative w-full h-fit sm:h-[60vh] landscape:h-[100vh] flex flex-col lg:flex-row landscape:flex-row landscape:items-center landscape:lg:justify-center gap-y-[1.5em] lg:gap-x-3 landscape:pr-4 landscape:pl-4 landscape:lg:h-[35em] sm:flex-row landscape:md:h-[20em] landscape:md:pb-4 lg:pb-3 portrait:sm:h-[50vh] portrait:sm:pb-4 mb-[2em]">
             <MediumCard
                 className={'medium-card transition-all duration-500 ease-in-out'}
-                image={params.gender === 'female' ? topShop : dateNight}
-                title={params.gender === 'female' ? "topshop" : "date-night-fits"}
+                image={topShop}
+                title={"topshop"}
                 text={params.gender === 'female' ? "our kinda flowers" : "fancy feels"}/>
             <MediumCard
                 className={'medium-card-two transition-all duration-500 ease-in-out'}
-                image={params.gender === 'female' ? classy : topman}
-                title={params.gender === 'female' ? "topwoman" : "topman"}
-                text={params.gender === 'female' ? "icons only" : "icons only"}/>
+                image={classy}
+                title={"topwoman"}
+                text={"icons only"}/>
         </section>
         <Gifts/>
         <div
@@ -238,12 +215,12 @@ export default function GenderPage() {
                     style={{transform: `translateX(calc(-${count}*16.7%))`}}
                     className={`relative w-fit h-full flex flex-row justify-center items-center gap-x-2 lg:gap-x-0 transition-all duration-300 ease-in-out`}
                 >
-                    <LogoCard logo={params.gender === 'female' ? monkl : tommyhilfigerlogo}/>
-                    <LogoCard logo={params.gender === 'female' ? dressed : northfacelogo}/>
-                    <LogoCard logo={params.gender === 'female' ? topshoplogo : adidaslogo}/>
-                    <LogoCard logo={params.gender === 'female' ? reclaimer : carharttlogo}/>
-                    <LogoCard logo={params.gender === 'female' ? collusion : ellesselogo}/>
-                    <LogoCard logo={params.gender === 'female' ? weekday : drmartenslogo}/>
+                    <LogoCard logo={monkl}/>
+                    <LogoCard logo={dressed}/>
+                    <LogoCard logo={topshoplogo}/>
+                    <LogoCard logo={reclaimer}/>
+                    <LogoCard logo={collusion}/>
+                    <LogoCard logo={weekday}/>
                 </div>
             </section>
         </section>

@@ -1,9 +1,7 @@
 import {PayPalButtons, PayPalScriptProvider} from "@paypal/react-paypal-js";
 import {toast} from "react-toastify";
 
-export default function Checkout({ totalPriceSum, showModal }) {
-    const modalPage = "checkout"
-    const modalText = "close modal"
+export default function Checkout({ totalPriceSum}) {
     const initialOptions = {
         "client-id": "Ac_CI5bTtQGUqrtq2WwwQS8NJ0fSk5elZaei9Cw96CV9IY8f2hbYKO8nRz9UdpnPDFYnkNZ6js5kSqPW",
         currency: "USD",
@@ -36,7 +34,7 @@ export default function Checkout({ totalPriceSum, showModal }) {
         alert(err)
     }
     return (
-        <section className="relative w-[90%] portrait:lg:w-[22em] landscape:w-[15em] landscape:lg:w-[22em] mx-auto h-[14em] landscape:lg:h-[20em]">
+        <section className="relative w-[90%] portrait:lg:w-[22em] landscape:w-[15em] landscape:lg:w-[22em] mx-auto h-[18em]">
             <div className="relative w-full h-full bg-white flex flex-col items-center gap-y-2 pr-4 pl-4">
 
 
@@ -64,9 +62,6 @@ export default function Checkout({ totalPriceSum, showModal }) {
                     </div>
                     < hr />
                 </div>
-                <button onClick={() => showModal(true, modalText, modalPage)} className="relative w-full h-[3em] bg-green-700 text-[0.9em] font-quicksandbold uppercase font-black text-white">
-                    checkout
-                </button>
                 
                 <div className={'relative w-full h-fit'}>
                     <PayPalScriptProvider options={initialOptions}>

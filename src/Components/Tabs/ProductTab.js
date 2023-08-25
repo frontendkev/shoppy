@@ -1,7 +1,7 @@
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 import Heart from "../../Svg/Heart"
 
-export default function ProductTab({ product, url, saveLastViewed, getImage }) {
+export default function ProductTab({ product, url, saveLastViewed }) {
 
     return (
        
@@ -13,7 +13,7 @@ export default function ProductTab({ product, url, saveLastViewed, getImage }) {
                         </div>
                         <Heart className={'relative landscape:w-[1em] landscape:h-[1em] portrait:h-[1em] portrait:w-[1em] mx-auto'} />
                 </div>
-                <Link onClick={() => saveLastViewed(product.id, product.title, product.image.file)} to={url}>
+                <Link onClick={() => saveLastViewed(product.id, product.title, product.type, product.image.file)} to={url}>
                     <img className={' w-full h-full object-cover object-top '} src={product.image.file} alt='' />
                 </Link>
                 </figure>

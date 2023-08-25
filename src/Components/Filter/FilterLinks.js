@@ -22,35 +22,35 @@ export const sortProducts = [
 export const femaleCategory = [
     {
         name: 'jeans & trousers',
-        url: '/shoppy/female/trouser'
+        url: '/shoppy/trouser'
     },
     {
         name: 'tops',
-        url: '/shoppy/female/shirt'
+        url: '/shoppy/shirt'
     },
     {
         name: 'skirts',
-        url: '/shoppy/female/skirt'
+        url: '/shoppy/skirt'
     },
     {
         name: 'outerwear',
-        url: '/shoppy/female/outerwear'
+        url: '/shoppy/outerwear'
     },
     {
         name: 'sportswear',
-        url: '/shoppy/female/sportswear'
+        url: '/shoppy/sportswear'
     },
     {
         name: 'dresses',
-        url: '/shoppy/female/dress'
+        url: '/shoppy/dress'
     },
     {
         name: 'shorts',
-        url: '/shoppy/female/short'
+        url: '/shoppy/short'
     },
     {
         name: 'lingerie & underwear',
-        url: '/shoppy/female/lingerie'
+        url: '/shoppy/lingerie'
     }
 ]
 
@@ -78,23 +78,23 @@ export const femaleBrand = [
 export const femaleBodyFit = [
     {
         name: 'hourglass',
-        url: '/shoppy/female/bodyfit/hourglass'
+        url: '/shoppy/bodyfit/hourglass'
     },
     {
         name: 'petite',
-        url: '/shoppy/female/bodyfit/petite'
+        url: '/shoppy/bodyfit/petite'
     },
     {
         name: 'plussize',
-        url: '/shoppy/female/bodyfit/plussize'
+        url: '/shoppy/bodyfit/plussize'
     },
     {
         name: 'tall',
-        url: '/shoppy/female/bodyfit/tall'
+        url: '/shoppy/bodyfit/tall'
     },
     {
         name: 'widefit',
-        url: '/shoppy/female/bodyfit/widefit'
+        url: '/shoppy/bodyfit/widefit'
     }
 ]
 
@@ -105,22 +105,22 @@ export const femaleSize = [
     },
     {
         name: 'uk 10',
-        url: '/shoppy/female/size/uk/10'
+        url: '/shoppy/size/uk/10'
     },
     {
         name: 'uk 20',
-        url: '/shoppy/female/size/uk/20'
+        url: '/shoppy/size/uk/20'
     },
     {
         name: 'uk 22',
-        url: '/shoppy/female/size/uk/22'
+        url: '/shoppy/size/uk/22'
     },
     {
         name: 'uk 28',
-        url: '/shoppy/female/size/uk/28'
+        url: '/shoppy/size/uk/28'
     },
     {
         name: 'uk 30',
-        url: '/shoppy/female/size/uk/30'
+        url: '/shoppy/size/uk/30'
     },
 ]

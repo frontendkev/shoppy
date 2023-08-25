@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { saveInStorage } from "../ReduxHelpers/ReduxHelpers";
-import { searchProducts, fetchRequest } from "../ThunkServices/thunkConnections";
+import {createSlice} from "@reduxjs/toolkit";
+import {saveInStorage} from "../ReduxHelpers/ReduxHelpers";
+import {fetchRequest, searchProducts} from "../ThunkServices/thunkConnections";
 
 
 export const productsSlice = createSlice({
@@ -10,7 +10,6 @@ export const productsSlice = createSlice({
         count: 0,
         lastViewed: [],
         isLoading: false,
-        currentGender: null,
     },
     reducers: {
 

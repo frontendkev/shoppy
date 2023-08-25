@@ -1,13 +1,10 @@
-
-
-import { Suspense, lazy, useEffect, useState } from "react"
+import {lazy, Suspense, useEffect, useState} from "react"
 import FabFits from "../../Components/Adverts/FabFits"
-import { useNavigate, Link } from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import TabLoader from "../../Components/Loaders/TabLoader"
 import ActionGetters from "../../Redux/ActionGetters/ActionGetters"
-import { useSelector } from "react-redux"
+import {useSelector} from "react-redux"
 import ContextActions from "../../AppContext/ContextActions"
-
 
 
 const WishlistTab = lazy(() => import('../../Components/Tabs/WishlistTab'))
@@ -96,7 +93,7 @@ export default function Wishlist() {
                                     sendToBag={addToBag}
                                     wishlist={product}
                                     saveLastViewed={saveLastViewed}
-                                    url={`/shoppy/${product.gender}/${product.type}/${product.title}`} />
+                                    url={`/shoppy/${product.type}/${product.title}`} />
                             </Suspense>
                         )
                     })

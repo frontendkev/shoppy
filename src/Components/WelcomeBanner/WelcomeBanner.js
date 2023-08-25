@@ -1,11 +1,13 @@
 
 
+
 export default function WelcomeBanner({ imageOne, imageTwo, hintClass, bannerOne, bannerTwo }) {
+
     return (
-        <section aria-label='home-banner' className="relative portrait:sm:w-[95%] portrait:w-full landscape:w-full landscape:pl-4 landscape:pr-4 mx-auto lg:mx-0 lg:w-full portrait:h-[70vh] landscape:lg:h-[40em] landscape:h-[100vh] landscape:md:h-[100vh]">
+        <section aria-label='home-banner' className="relative portrait:sm:w-[95%] portrait:w-full landscape:w-full landscape:pl-4 landscape:pr-4 mx-auto lg:mx-0 lg:w-full portrait:h-[70vh] portrait:sm:h-[50vh] portrait:md:h-[45vh] landscape:lg:h-[40em] landscape:h-[100vh] landscape:md:h-[100vh] overflow-hidden">
             <figure className={`relative w-full h-full landscape:lg:h-[95%] flex flex-row items-center justify-center gap-x-2 overflow-hidden`}>
-                <img alt='' src={imageOne} className={`${bannerOne} relative w-full lg:w-[40%] h-[90%] hidden sm:block object-cover lg:block object-center`} />
-                <img alt='' src={imageTwo} className={`${bannerTwo} relative w-full lg:w-[40%] h-[90%] object-cover object-top`} />
+                <img alt='' src={imageOne} className={`${bannerOne} relative w-full sm:w-[50%] lg:w-[40%] h-[90%] hidden sm:block object-cover lg:block object-center`} />
+                <img alt='' src={imageTwo} className={`${bannerTwo} relative w-full sm:w-[50%] lg:w-[40%] h-[90%] object-cover object-top`} />
             </figure>
 
             <div className="absolute w-full h-[10em] landscape:lg:h-[15em] z-[5] portrait:bottom-[5em] landscape:bottom-[30%] landscape:lg:bottom-[5em] lg:bottom-[5em] portrait:sm:bottom-[5em] flex flex-col justify-center items-center gap-y-4">

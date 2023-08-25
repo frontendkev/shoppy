@@ -1,5 +1,5 @@
-import { Outlet, useMatches } from "react-router-dom";
-import { AppFooter } from "../Components/Footer/Footer";
+import {Outlet, useMatches} from "react-router-dom";
+import {AppFooter} from "../Components/Footer/Footer";
 import NavBar from "../Components/NavBar/NavBar";
 import ScrollToTop from "../Components/Scroller/Scroller/ScrollToTop";
 import Scroller from "../Components/Scroller/Scroller/Scroller";
@@ -14,7 +14,7 @@ export default function Root() {
         <>
             <ScrollToTop />
             <Scroller />
-            {lastRoute !== "/" && <NavBar />}
+            <NavBar />
             <Modal />
 
             <main>
@@ -24,6 +24,3 @@ export default function Root() {
         </>
     );
 }
-
-
-

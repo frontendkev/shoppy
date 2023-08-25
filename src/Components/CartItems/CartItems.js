@@ -2,10 +2,11 @@ import Heart from '../../Svg/Heart'
 import {Link} from 'react-router-dom'
 import Line from '../Line/Line'
 import Close from '../../Svg/Close'
+import ActionGetters from '../../Redux/ActionGetters/ActionGetters'
 
 export default function CartItems({ items, removeItem, increaseItem, reduceItem, updateWishlist, count, totalPriceSum }) {
 
-
+    const { saveLastViewed } = ActionGetters()
 
     return (
         <section className="relative w-[90%] portrait:lg:w-[40em] landscape:w-[30em] landscape:lg:w-[40em] mx-auto portrait:h-fit landscape:h-full portrait:lg:h-full overflow-hidden flex flex-col gap-y-[0.5em]">
@@ -41,7 +42,7 @@ export default function CartItems({ items, removeItem, increaseItem, reduceItem,
 
                                             </h1>
 
-                                            <Link to={`/shoppy/${cartItem.gender}/${cartItem.type}/${cartItem.title}`}>
+                                            <Link onClick={() => saveLastViewed(cartItem.id, cartItem.title, cartItem.type, cartItem.image)} to={`/shoppy/${cartItem.type}/${cartItem.title}`}>
                                                 <h2 className="relative font-quicksandregular text-gray-600 text-[0.8em] capitalize hover:underline">
                                                     {cartItem.title}
                                                 </h2>

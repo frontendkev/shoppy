@@ -11,8 +11,8 @@ export default function NavBar() {
     const auth = useSelector(store => store.auth)
 
     return (
-        <nav aria-label="nav-bar-section" className={`navbar-container portrait:h-[70px] bg-gray-800 landscape:h-[81px] w-full portrait:sm:h-[3.5em] landscape:lg:h-[4.5em] md:w-full relative landscape:h-[3.8em]`}>
-            <div className={'w-full portrait:h-[120px] landscape:h-[81px] fixed top-0 z-50'}>
+        <nav aria-label="nav-bar-section" className={`navbar-container portrait:h-[68px] bg-gray-800 landscape:h-[70px] w-full portrait:sm:h-[90px] landscape:lg:h-[80px] md:w-full relative overflow-hidden`}>
+            <div className={'w-full portrait:h-[68px] portrait:sm:h-[90px] landscape:h-[81px] fixed top-0 overflow-hidden z-50'}>
                 <TopNav auth={auth} wishlist={wishlist} cartCount={cartCount} />
                 <BottomNav />
             </div>
